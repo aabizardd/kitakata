@@ -105,9 +105,10 @@ function rupiah($angka)
                                                 </div>
                                                 <div class="product-box__action action-2">
 
-                                                    <a href="<?= base_url('cart') ?>" class="add-to-cart"
-                                                        data-bs-toggle="tooltip" data-bs-placement="top"
-                                                        title="Add to cart"><i class="fa fa-shopping-bag"></i> add to
+                                                    <a href="<?= base_url('tambah_keranjang/' . $pd->book_id) ?>"
+                                                        class="add-to-cart" data-bs-toggle="tooltip"
+                                                        data-bs-placement="top" title="Add to cart"><i
+                                                            class="fa fa-shopping-bag"></i> add to
                                                         cart</a>
 
                                                 </div>
@@ -190,9 +191,10 @@ function rupiah($angka)
                                                         <?= substr($pd->book_synopsis, 0, 200) ?>
                                                     </p>
                                                     <div class="product-box__action action-4">
-                                                        <a href="<?= base_url('cart') ?>" class="add-to-cart"
-                                                            data-bs-toggle="tooltip" data-bs-placement="top"
-                                                            title="Add to cart"><i class="fa fa-shopping-bag"></i> Add
+                                                        <a href="<?= base_url('tambah_keranjang/' . $pd->book_id) ?>"
+                                                            class="add-to-cart" data-bs-toggle="tooltip"
+                                                            data-bs-placement="top" title="Add to cart"><i
+                                                                class="fa fa-shopping-bag"></i> Add
                                                             to
                                                             cart</a>
 
@@ -247,7 +249,8 @@ function rupiah($angka)
                         <div class="sidebar-widget banner-widget">
                             <div class="promo-box full-width bg--white">
                                 <a href="#">
-                                    <img src="assets/img/banner/home1-product-banner-1.jpg" alt="promo" />
+                                    <img src="<?= base_url('/') ?>assets/img/banner/home1-product-banner-1.jpg"
+                                        alt="promo" />
                                 </a>
                             </div>
                         </div>

@@ -5,18 +5,18 @@
                 <div class="col-md-4 mb-sm--30">
                     <div class="method-box">
                         <div class="method-box__icon">
-                            <i class="fa fa-phone"></i>
+                            <a href="https://wa.me/6281210700524/" target="_blank"><i class="fa fa-phone"></i></a>
                         </div>
                         <div class="method-box__content">
-                            <h4>+88 123 456 7899</h4>
-                            <p>Free support line!</p>
+                            <h4>+62 812-1070-0524</h4>
+                            <p>Transaksi Melalui Whatsapp!</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 mb-sm--30">
                     <div class="method-box">
                         <div class="method-box__icon">
-                            <i class="fa fa-envelope-o"></i>
+                            <a href=""><i class="fa fa-envelope-o"></i></a>
                         </div>
                         <div class="method-box__content">
                             <h4>Support@roadthemes.com</h4>
@@ -27,7 +27,7 @@
                 <div class="col-md-4">
                     <div class="method-box">
                         <div class="method-box__icon">
-                            <i class="fa fa-clock-o"></i>
+                            <a href=""><i class="fa fa-clock-o"></i></a>
                         </div>
                         <div class="method-box__content">
                             <h4>Mon - Fri / 8:00 - 18:00</h4>

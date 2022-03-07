@@ -69,14 +69,15 @@
                         </div>
                         <div class="col-xl-4 col-lg-5">
                             <!-- Search Form Start -->
-                            <form action="#" class="search-form search-form--1">
+                            <form action="<?= base_url('shop') ?>" class="search-form search-form--1" method="GET">
                                 <div class="search-form__group search-form__group--select">
-                                    <select name="category" id="searchCategory" class="search-form__select">
-                                        <option value="all">Semua Kategori</option>
+                                    <select name="category" id="searchCategory" class="search-form__select"
+                                        name="category">
+                                        <option value="null">Semua Kategori</option>
                                         <optgroup label="Kategori">
-                                            <option>Bedroom</option>
-                                            <option>Kitchen</option>
-                                            <option>Livingroom</option>
+                                            <option>a</option>
+                                            <option>b</option>
+                                            <option>c</option>
                                         </optgroup>
 
                                         <optgroup label="Electronics" style="display: none">
@@ -86,7 +87,8 @@
                                         </optgroup>
                                     </select>
                                 </div>
-                                <input type="text" class="search-form__input" placeholder="Enter your search..." />
+                                <input type="text" class="search-form__input" placeholder="Enter your search..."
+                                    name="book_name" />
                                 <button class="search-form__submit hover-scheme-2">
                                     <i class="fa fa-search"></i>
                                 </button>
@@ -119,7 +121,9 @@
                                     <?php foreach ($categories as $category) : ?>
 
                                     <li class="category-nav__menu__item">
-                                        <a href="<?= base_url('shop') ?>"> <?= $category->category_name ?></a>
+                                        <a
+                                            href="<?= base_url('shop?category=' . strtolower($category->category_name)) ?>">
+                                            <?= $category->category_name ?></a>
                                     </li>
 
                                     <?php endforeach ?>
@@ -239,7 +243,8 @@
                                             <a href="<?= base_url('cart') ?>"
                                                 class="btn btn-small btn-icon btn-style-1 color-1">View
                                                 Cart <i class="fa fa-angle-right"></i></a>
-                                            <a href="checkout.html"
+                                            <a href="https://wa.me/6281210700524/?text=Hallo%20saya%20ingin%20membeli%20buku%20di%20kitakatastore.com"
+                                                target="_blank"
                                                 class="btn btn-small btn-icon btn-style-1 color-1">Checkout <i
                                                     class="fa fa-angle-right"></i></a>
                                         </div>

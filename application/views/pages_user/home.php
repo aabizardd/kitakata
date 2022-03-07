@@ -212,8 +212,8 @@ function rupiah($angka)
                                 </div>
                                 <div class="product-box__action action-3">
 
-                                    <a href="<?= base_url('cart') ?>" class="add-to-cart" data-bs-toggle="tooltip"
-                                        data-bs-placement="top" title="Add to cart"><i
+                                    <a href="<?= base_url('tambah_keranjang/' . $pd->book_id) ?>" class="add-to-cart"
+                                        data-bs-toggle="tooltip" data-bs-placement="top" title="Add to cart"><i
                                             class="fa fa-shopping-bag"></i></a>
 
                                 </div>
@@ -301,8 +301,8 @@ function rupiah($angka)
                                 </div>
                                 <div class="product-box__action action-3">
 
-                                    <a href="<?= base_url('cart') ?>" class="add-to-cart" data-bs-toggle="tooltip"
-                                        data-bs-placement="top" title="Add to cart"><i
+                                    <a href="<?= base_url('tambah_keranjang/' . $pd->book_id) ?>" class="add-to-cart"
+                                        data-bs-toggle="tooltip" data-bs-placement="top" title="Add to cart"><i
                                             class="fa fa-shopping-bag"></i></a>
 
                                 </div>

@@ -15,12 +15,33 @@ class Shop extends CI_Controller
 	public function index()
 	{
 
+		$category = $this->input->get('category');
+		$book_name = $this->input->get('book_name');
+
+
+		$where = null;
+
+		if (is_null($book_name) && is_null($category)) {
+
+			$where = null;
+		} elseif ($category) {
+			$where = [
+				'category_name' => $category
+			];
+		} elseif ($book_name) {
+			$where = [
+				'book_name' => $book_name
+			];
+		}
+
 		$data = [
 			'title' => "Shop Kita Kata Store",
-			'products' => $this->m_book->get_books(),
+			'products' => $this->m_book->get_books_where($where),
 			'categories' => $this->m_book->get_count_book_cat()
 
 		];
+
+
 
 		$this->load->view('template_user/header', $data);
 		$this->load->view('pages_user/shop');
@@ -43,7 +64,7 @@ class Shop extends CI_Controller
 		$this->load->view('template_user/footer');
 	}
 
-	public function tambah_keranjang($book_id)
+	public function tambah_keranjang($book_id, $qty = 1)
 	{
 
 		$where = [
@@ -58,7 +79,7 @@ class Shop extends CI_Controller
 
 		$data_buku = array(
 			'id'      	=> $buku['book_id'],
-			'qty'     	=> 1,
+			'qty'     	=> $qty,
 			'price'   	=> $buku['book_price'],
 			'name'    	=> $buku['book_name'],
 			'options' => array('discount' => $buku['book_discount'], 'img' => $buku['book_cover'], 'total' => $harga_disc)
@@ -71,7 +92,38 @@ class Shop extends CI_Controller
 
 
 
-		redirect('cart');
+		redirect($_SERVER['HTTP_REFERER']);
+	}
+
+	public function tambah_keranjang_by_form()
+	{
+
+		$where = [
+			'book_id' => $this->input->post('book_id')
+		];
+
+		$buku = $this->m_book->get_one_book($where);
+		// $produk = $this->Produk_model->cari($id_produk);
+
+		$disc = $buku['book_price'] * $buku['book_discount'] / 100;
+		$harga_disc = $buku['book_price'] - $disc;
+
+		$data_buku = array(
+			'id'      	=> $buku['book_id'],
+			'qty'     	=> $this->input->post('qty'),
+			'price'   	=> $buku['book_price'],
+			'name'    	=> $buku['book_name'],
+			'options' => array('discount' => $buku['book_discount'], 'img' => $buku['book_cover'], 'total' => $harga_disc)
+			// 'discount'  => $buku['discount'],
+			// 'img'    	=> $buku['book_cover'],
+			// 'total'    	=> $harga_disc,
+		);
+
+		$this->cart->insert($data_buku);
+
+
+
+		redirect($_SERVER['HTTP_REFERER']);
 	}
 
 	public function delete_cart($id)

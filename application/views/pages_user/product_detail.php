@@ -92,16 +92,22 @@ function rupiah($angka)
                                         class="fa fa-check-circle"></i><?= $books_detail['book_stock'] ?> Stok Tersedia
                                 </p>
 
-                                <div class="product-action-wrapper">
-                                    <div class="quantity">
-                                        <input type="number" class="quantity-input" name="qty" id="qty2" value="1"
-                                            min="1" style="border: none;background-color: #e9e9e9;border-radius: 5px;"
-                                            autofocus>
+                                <form action="<?= base_url('user/shop/tambah_keranjang_by_form') ?>" method="POST">
+                                    <div class="product-action-wrapper">
+
+                                        <div class="quantity">
+                                            <input type="number" class="quantity-input" name="qty" id="qty2" value="1"
+                                                min="1"
+                                                style="border: none;background-color: #e9e9e9;border-radius: 5px;"
+                                                autofocus>
+                                            <input type="hidden" name="book_id" value="<?= $books_detail['book_id'] ?>">
+                                        </div>
+                                        <button type="submit" class="btn add-to-cart btn-style-1 color-1">
+                                            Add To Cart
+                                        </button>
+
                                     </div>
-                                    <a href="#" class="btn add-to-cart btn-style-1 color-1">
-                                        Add To Cart
-                                    </a>
-                                </div>
+                                </form>
 
                             </div>
 
@@ -254,9 +260,9 @@ function rupiah($angka)
                                     </div>
                                     <div class="product-box__action action-2">
 
-                                        <a href="<?= base_url('cart') ?>" class="add-to-cart" data-bs-toggle="tooltip"
-                                            data-bs-placement="top" title="Add to cart"><i
-                                                class="fa fa-shopping-bag"></i> add to cart</a>
+                                        <a href="<?= base_url('tambah_keranjang/' . $pd->book_id) ?>"
+                                            class="add-to-cart" data-bs-toggle="tooltip" data-bs-placement="top"
+                                            title="Add to cart"><i class="fa fa-shopping-bag"></i> add to cart</a>
 
                                     </div>
                                 </div>
