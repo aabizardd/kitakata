@@ -35,7 +35,7 @@ function rupiah($angka)
                 <div class="row">
                     <div class="col-12">
                         <!-- Cart Area Start -->
-                        <form action="<?= base_url('user/shop/update_cart') ?>" method="POST" class="form form--cart">
+                        <form action="<?= base_url('shop/update_cart') ?>" method="POST" class="form form--cart">
                             <div class="cart-table table-content table-responsive">
                                 <table class="table mb--30">
                                     <thead>

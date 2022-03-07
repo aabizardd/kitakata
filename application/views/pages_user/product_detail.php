@@ -92,7 +92,7 @@ function rupiah($angka)
                                         class="fa fa-check-circle"></i><?= $books_detail['book_stock'] ?> Stok Tersedia
                                 </p>
 
-                                <form action="<?= base_url('user/shop/tambah_keranjang_by_form') ?>" method="POST">
+                                <form action="<?= base_url('shop/tambah_keranjang_by_form') ?>" method="POST">
                                     <div class="product-action-wrapper">
 
                                         <div class="quantity">
