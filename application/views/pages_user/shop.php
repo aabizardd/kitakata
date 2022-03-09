@@ -51,7 +51,7 @@ function rupiah($angka)
                                 <option value="5">Price, high to low</option>
                             </select>
                         </div>
-                        <span class="shop-toolbar__product-count">There Are 13 Products.</span>
+                        <span class="shop-toolbar__product-count">There Are <?= $book_ct ?> Products.</span>
                     </div>
                     <!-- Shop Toolbar End -->
 
@@ -63,57 +63,48 @@ function rupiah($angka)
                                     <div class="row no-gutters">
 
                                         <?php foreach ($products as $pd) : ?>
-                                        <div class="col-md-4 col-sm-6">
-                                            <div class="product-box product-box-hover-down bg--white color-1">
-                                                <div class="product-box__img">
-                                                    <img src="<?= base_url('/') ?>assets/img/book_cover/<?= $pd->book_cover ?>"
-                                                        alt="product" class="primary-image" />
+                                            <div class="col-md-4 col-sm-6">
+                                                <div class="product-box product-box-hover-down bg--white color-1">
+                                                    <div class="product-box__img">
+                                                        <img src="<?= base_url('/') ?>assets/img/book_cover/<?= $pd->book_cover ?>" alt="product" class="primary-image" />
 
-                                                    <img src="<?= base_url('/') ?>assets/img/book_cover/<?= $pd->book_cover ?>"
-                                                        alt="product" class="secondary-image" />
+                                                        <img src="<?= base_url('/') ?>assets/img/book_cover/<?= $pd->book_cover ?>" alt="product" class="secondary-image" />
 
-                                                    <a href="<?= base_url('detail_product/' . $pd->book_id) ?>"
-                                                        class="product-box__quick-view"><i class="fa fa-search"></i></a>
-                                                </div>
-
-                                                <div class="product-box__content">
-                                                    <h3 class="product-box__title">
-                                                        <a
-                                                            href="<?= base_url('detail_product/' . $pd->book_id) ?>"><?= substr($pd->book_name, 0, 40) . "...." ?></a>
-                                                    </h3>
-                                                    <div class="ratings">
-
+                                                        <a href="<?= base_url('detail_product/' . $pd->book_id) ?>" class="product-box__quick-view"><i class="fa fa-search"></i></a>
                                                     </div>
-                                                    <div class="product-box__price">
-                                                        <span
-                                                            class="regular-price"><?= rupiah($pd->book_price) ?></span>
-                                                        <?php if ($pd->book_discount != 0) : ?>
-                                                        <span
-                                                            class="badge badge-danger">-<?= $pd->book_discount ?>%</span>
 
-                                                        <?php endif ?>
+                                                    <div class="product-box__content">
+                                                        <h3 class="product-box__title">
+                                                            <a href="<?= base_url('detail_product/' . $pd->book_id) ?>"><?= substr($pd->book_name, 0, 40) . "...." ?></a>
+                                                        </h3>
+                                                        <div class="ratings">
 
-                                                        <?php
+                                                        </div>
+                                                        <div class="product-box__price">
+                                                            <span class="regular-price"><?= rupiah($pd->book_price) ?></span>
+                                                            <?php if ($pd->book_discount != 0) : ?>
+                                                                <span class="badge badge-danger">-<?= $pd->book_discount ?>%</span>
+
+                                                            <?php endif ?>
+
+                                                            <?php
 
                                                             $disc = $pd->book_price * $pd->book_discount / 100;
                                                             $harga_asli = $pd->book_price - $disc;
 
                                                             ?>
 
-                                                        <span class="sale-price mt-2"><?= rupiah($harga_asli) ?></span>
+                                                            <span class="sale-price mt-2"><?= rupiah($harga_asli) ?></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-box__action action-2">
+
+                                                        <a href="<?= base_url('tambah_keranjang/' . $pd->book_id) ?>" class="add-to-cart" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to cart"><i class="fa fa-shopping-bag"></i> add to
+                                                            cart</a>
+
                                                     </div>
                                                 </div>
-                                                <div class="product-box__action action-2">
-
-                                                    <a href="<?= base_url('tambah_keranjang/' . $pd->book_id) ?>"
-                                                        class="add-to-cart" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" title="Add to cart"><i
-                                                            class="fa fa-shopping-bag"></i> add to
-                                                        cart</a>
-
-                                                </div>
                                             </div>
-                                        </div>
                                         <?php endforeach ?>
 
 
@@ -142,67 +133,57 @@ function rupiah($angka)
                                 <div class="product-list-view">
 
                                     <?php foreach ($products as $pd) : ?>
-                                    <div class="product-box product-box--list bg--white">
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <div class="product-box__img">
-                                                    <img src="<?= base_url('/') ?>assets/img/book_cover/<?= $pd->book_cover ?>"
-                                                        alt="product" class="primary-image" />
+                                        <div class="product-box product-box--list bg--white">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="product-box__img">
+                                                        <img src="<?= base_url('/') ?>assets/img/book_cover/<?= $pd->book_cover ?>" alt="product" class="primary-image" />
 
-                                                    <img src="<?= base_url('/') ?>assets/img/book_cover/<?= $pd->book_cover ?>"
-                                                        alt="product" class="secondary-image" />
+                                                        <img src="<?= base_url('/') ?>assets/img/book_cover/<?= $pd->book_cover ?>" alt="product" class="secondary-image" />
 
-                                                    <a href="<?= base_url('detail_product/' . $pd->book_id) ?>"
-                                                        class="product-box__quick-view"><i class="fa fa-search"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-8">
-                                                <div class="product-box__content">
-                                                    <h3 class="product-box__title">
-                                                        <a
-                                                            href="<?= base_url('detail_product/' . $pd->book_id) ?>"><?= substr($pd->book_name, 0, 35) . "...." ?></a>
-                                                    </h3>
-                                                    <div class="ratings">
-                                                        <?php for ($i = 0; $i < 5; $i++) : ?>
-                                                        <i class="fa fa-star rated"></i>
-
-                                                        <?php endfor ?>
+                                                        <a href="<?= base_url('detail_product/' . $pd->book_id) ?>" class="product-box__quick-view"><i class="fa fa-search"></i></a>
                                                     </div>
-                                                    <div class="product-box__price">
-                                                        <span
-                                                            class="regular-price"><?= rupiah($pd->book_price) ?></span>
-                                                        <?php if ($pd->book_discount != 0) : ?>
-                                                        <span
-                                                            class="badge badge-danger">-<?= $pd->book_discount ?>%</span>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <div class="product-box__content">
+                                                        <h3 class="product-box__title">
+                                                            <a href="<?= base_url('detail_product/' . $pd->book_id) ?>"><?= substr($pd->book_name, 0, 35) . "...." ?></a>
+                                                        </h3>
+                                                        <div class="ratings">
+                                                            <?php for ($i = 0; $i < 5; $i++) : ?>
+                                                                <i class="fa fa-star rated"></i>
 
-                                                        <?php endif ?>
+                                                            <?php endfor ?>
+                                                        </div>
+                                                        <div class="product-box__price">
+                                                            <span class="regular-price"><?= rupiah($pd->book_price) ?></span>
+                                                            <?php if ($pd->book_discount != 0) : ?>
+                                                                <span class="badge badge-danger">-<?= $pd->book_discount ?>%</span>
 
-                                                        <?php
+                                                            <?php endif ?>
+
+                                                            <?php
 
                                                             $disc = $pd->book_price * $pd->book_discount / 100;
                                                             $harga_asli = $pd->book_price - $disc;
 
                                                             ?>
 
-                                                        <span
-                                                            class="sale-price mt-2 ml-2"><?= rupiah($harga_asli) ?></span>
-                                                    </div>
-                                                    <p class="product-box__desc">
-                                                        <?= substr($pd->book_synopsis, 0, 200) ?>
-                                                    </p>
-                                                    <div class="product-box__action action-4">
-                                                        <a href="<?= base_url('tambah_keranjang/' . $pd->book_id) ?>"
-                                                            class="add-to-cart" data-bs-toggle="tooltip"
-                                                            data-bs-placement="top" title="Add to cart"><i
-                                                                class="fa fa-shopping-bag"></i> Add
-                                                            to
-                                                            cart</a>
+                                                            <span class="sale-price mt-2 ml-2"><?= rupiah($harga_asli) ?></span>
+                                                        </div>
+                                                        <p class="product-box__desc">
+                                                            <?= substr($pd->book_synopsis, 0, 200) ?>
+                                                        </p>
+                                                        <div class="product-box__action action-4">
+                                                            <a href="<?= base_url('tambah_keranjang/' . $pd->book_id) ?>" class="add-to-cart" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to cart"><i class="fa fa-shopping-bag"></i> Add
+                                                                to
+                                                                cart</a>
 
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
                                     <?php endforeach ?>
 
                                     <ul class="pagination">
@@ -232,10 +213,10 @@ function rupiah($angka)
                                 <ul class="product-categories">
 
                                     <?php foreach ($categories as $c) : ?>
-                                    <li class="cat-item">
-                                        <a href="shop.html"><?= $c->category_name ?></a>
-                                        <span class="count">(<?= $c->book_count ?>)</span>
-                                    </li>
+                                        <li class="cat-item">
+                                            <a href="<?= base_url('shop/?category=' . $c->category_name) ?>"><?= $c->category_name ?></a>
+                                            <span class="count">(<?= $c->book_count ?>)</span>
+                                        </li>
                                     <?php endforeach ?>
 
                                 </ul>
@@ -249,8 +230,7 @@ function rupiah($angka)
                         <div class="sidebar-widget banner-widget">
                             <div class="promo-box full-width bg--white">
                                 <a href="#">
-                                    <img src="<?= base_url('/') ?>assets/img/banner/home1-product-banner-1.jpg"
-                                        alt="promo" />
+                                    <img src="<?= base_url('/') ?>assets/img/banner/home1-product-banner-1.jpg" alt="promo" />
                                 </a>
                             </div>
                         </div>
