@@ -57,7 +57,11 @@ $route['cart'] = 'shop/cart';
 $route['tambah_keranjang/(:num)'] = 'shop/tambah_keranjang/$1';
 $route['delete_cart/(:any)'] = 'shop/delete_cart/$1';
 
+//admin
+$route['logout'] = 'admin/logout';
+$route['admin/book'] = 'admin/kelola_buku';
+
+
 $route['default_controller'] = 'home';
 $route['404_override'] = 'my404';
 $route['translate_uri_dashes'] = FALSE;
-
