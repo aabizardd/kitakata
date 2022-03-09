@@ -67,17 +67,23 @@
                                 <!-- Mainmenu End -->
                             </nav>
                         </div>
+
+                        <?php $categories = $this->m_book->get_count_book_cat(); ?>
+
                         <div class="col-xl-4 col-lg-5">
                             <!-- Search Form Start -->
                             <form action="<?= base_url('shop') ?>" class="search-form search-form--1" method="GET">
                                 <div class="search-form__group search-form__group--select">
                                     <select name="category" id="searchCategory" class="search-form__select"
                                         name="category">
-                                        <option value="null">Semua Kategori</option>
+                                        <option value="all">Semua Kategori</option>
                                         <optgroup label="Kategori">
-                                            <option>a</option>
-                                            <option>b</option>
-                                            <option>c</option>
+
+                                            <?php foreach ($categories as $c) : ?>
+                                            <option value="<?= strtolower($c->category_name) ?>">
+                                                <?= $c->category_name ?></option>
+                                            <?php endforeach ?>
+
                                         </optgroup>
 
                                         <optgroup label="Electronics" style="display: none">

@@ -21,8 +21,7 @@ class Shop extends CI_Controller
 
 		$where = null;
 
-		if (is_null($book_name) && is_null($category)) {
-
+		if (is_null($book_name) && is_null($category) || is_null($book_name) && $category == "all" || $book_name == "" && $category == "all") {
 			$where = null;
 		} elseif ($category) {
 			$where = [
@@ -37,8 +36,8 @@ class Shop extends CI_Controller
 		$data = [
 			'title' => "Shop Kita Kata Store",
 			'products' => $this->m_book->get_books_where($where),
-			'categories' => $this->m_book->get_count_book_cat()
-
+			'categories' => $this->m_book->get_count_book_cat(),
+			'book_ct' => $this->m_book->ct_book($where),
 		];
 
 

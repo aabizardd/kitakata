@@ -82,12 +82,75 @@ function rupiah($angka)
                                     <span class="sale-price mt-2 ml-2"><?= rupiah($harga_asli) ?></span>
                                 </div>
                             </div>
-
                             <div class="single-product__middle">
-                                <p class="single-product__short-desc">Lorem ipsum dolor sit amet, consectetur adipiscing
-                                    elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero
-                                    vulputate rutrum. Morbi ornare lectus quis justo gravida semper. Nulla tellus mi,
-                                    vulputate adipiscing cursus eu, suscipit id nulla.</p>
+                                <p class="single-product__short-desc">
+
+                                <h5>Data Buku</h5>
+                                <table>
+                                    <tr>
+                                        <th style="width: 90px;">Judul Buku</th>
+                                        <td style="width: 20px;">:</td>
+                                        <td><?= $books_detail['book_name'] ?></td>
+                                    </tr>
+
+                                    <tr>
+                                        <th style="width: 90px;">Penulis</th>
+                                        <td style="width: 20px;">:</td>
+                                        <td><?= $books_detail['book_writer'] ?></td>
+                                    </tr>
+
+                                    <tr>
+                                        <th style="width: 90px;">Genre</th>
+                                        <td style="width: 20px;">:</td>
+                                        <td><?= $books_detail['category_name'] ?></td>
+                                    </tr>
+
+                                    <tr>
+                                        <th style="width: 90px;">Penerbit</th>
+                                        <td style="width: 20px;">:</td>
+                                        <td><?= $books_detail['book_publisher'] ?></td>
+                                    </tr>
+
+                                    <tr>
+                                        <th style="width: 90px;">Cetakan</th>
+                                        <td style="width: 20px;">:</td>
+                                        <td><?= $books_detail['book_edition'] ?></td>
+                                    </tr>
+
+                                    <tr>
+                                        <th style="width: 90px;">Ukuran</th>
+                                        <td style="width: 20px;">:</td>
+                                        <td><?= $books_detail['book_size'] ?></td>
+                                    </tr>
+
+                                    <tr>
+                                        <th style="width: 90px;">Tebal</th>
+                                        <td style="width: 20px;">:</td>
+                                        <td><?= $books_detail['book_thick'] ?></td>
+                                    </tr>
+
+                                    <tr>
+                                        <th style="width: 90px;">Berat</th>
+                                        <td style="width: 20px;">:</td>
+                                        <td><?= $books_detail['book_weight'] ?></td>
+                                    </tr>
+
+                                    <tr>
+                                        <th style="width: 90px;">ISBN</th>
+                                        <td style="width: 20px;">:</td>
+                                        <td><?= $books_detail['book_isbn'] ?></td>
+                                    </tr>
+
+                                    <tr>
+                                        <th style="width: 90px;">Harga Asli</th>
+                                        <td style="width: 20px;">:</td>
+                                        <td><?= rupiah($books_detail['book_price']) ?></td>
+                                    </tr>
+
+
+                                </table>
+
+                                </p>
                                 <p class="product-availability"><i
                                         class="fa fa-check-circle"></i><?= $books_detail['book_stock'] ?> Stok Tersedia
                                 </p>
@@ -114,7 +177,8 @@ function rupiah($angka)
                             <div class="single-product__meta">
                                 <p>
                                     <strong>Kategori Buku:</strong>
-                                    <a href="shop.html">Accessories</a>
+                                    <a
+                                        href="<?= base_url('shop/?category=' . $books_detail['category_name']) ?>"><?= $books_detail['category_name'] ?></a>
                                 </p>
 
                             </div>
@@ -172,7 +236,7 @@ function rupiah($angka)
                             <li class="nav-item single-product-tab__item">
                                 <a class="nav-link single-product-tab__link" id="nav-details-tab" data-bs-toggle="tab"
                                     href="#nav-details" role="tab" aria-controls="nav-details"
-                                    aria-selected="true">Additional Information</a>
+                                    aria-selected="true">Informasi Tambahan</a>
                             </li>
 
 
@@ -190,11 +254,12 @@ function rupiah($angka)
                                     <div class="table-content table-responsive">
                                         <table class="shop_attributes">
                                             <tr>
-                                                <th>Color: </th>
+                                                <th>Judul Buku: </th>
                                                 <td>
-                                                    <p>Black, Blue, Gold</p>
+                                                    <p><?= $books_detail['book_name'] ?></p>
                                                 </td>
                                             </tr>
+
                                         </table>
                                     </div>
                                 </div>

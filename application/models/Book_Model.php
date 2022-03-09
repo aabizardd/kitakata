@@ -61,10 +61,28 @@ class Book_Model extends CI_Model
 
         if ($where != null) {
 
-            $this->db->where($where);
+            $this->db->like($where);
         }
 
         $query = $this->db->get()->result();
+
+        return $query;
+    }
+
+    public function ct_book($where)
+    {
+
+        $this->db->select('*');
+        $this->db->from('t_books a');
+        $this->db->join('t_book_detail b', 'a.book_id = b.book_id');
+        $this->db->join('t_categories c', 'a.book_category = c.category_id');
+
+        if ($where != null) {
+
+            $this->db->like($where);
+        }
+
+        $query = $this->db->get()->num_rows();
 
         return $query;
     }
