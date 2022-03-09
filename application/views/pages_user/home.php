@@ -159,7 +159,9 @@ function rupiah($angka)
                 <div class="col-xl-9 col-md-8 text-md-right text-center">
                     <ul class="category-list list-1 color-1">
                         <?php foreach ($categories_limit as $cl) : ?>
-                        <li><a href="<?= base_url('shop') ?>"><?= $cl->category_name ?></a></li>
+                        <li><a
+                                href="<?= base_url('shop/?category=' . strtolower($cl->category_name)) ?>"><?= $cl->category_name ?></a>
+                        </li>
                         <?php endforeach ?>
 
                         <li><a href="<?= base_url('shop') ?>">Lihat Lainnya</a></li>
