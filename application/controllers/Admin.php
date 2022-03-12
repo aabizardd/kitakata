@@ -11,20 +11,22 @@ class Admin extends CI_Controller
 
         $this->load->model('Book_Model', 'm_book');
 
-        if (!$this->session->userdata('admin_username')) {
-            redirect('logout');
-        }
+
 
         // var_dump($this->session->userdata('admin_username'));
         // die();
     }
 
-    public function index()
+    public function check_session()
     {
 
-        if ($this->session->userdata('admin_username')) {
-            redirect('admin/dashboard');
+        if (!$this->session->userdata('admin_username')) {
+            redirect('admin');
         }
+    }
+
+    public function index()
+    {
 
 
         $this->form_validation->set_rules('username', 'Username', 'trim|required');
@@ -91,6 +93,7 @@ class Admin extends CI_Controller
     public function dashboard()
     {
 
+        $this->check_session();
 
         $data = [
             'title' => 'Dashboard Admin - Kata Kiri Store'
@@ -104,7 +107,7 @@ class Admin extends CI_Controller
 
     public function kelola_buku()
     {
-
+        $this->check_session();
 
         $books = $this->m_book->get_books();
 
@@ -121,7 +124,7 @@ class Admin extends CI_Controller
 
     public function tambah_buku()
     {
-
+        $this->check_session();
         $data = [
             'title' => 'Tambah Buku - Kata Kiri Store',
             'categories' => $this->m_book->get('t_categories')
@@ -135,23 +138,8 @@ class Admin extends CI_Controller
     public function add_book()
     {
 
-        $config['upload_path'] = './assets/img/book_cover/';
-        $config['allowed_types'] = 'gif|jpg|png';
-        $config['max_size'] = 2000;
-        $config['max_width'] = 1500;
-        $config['max_height'] = 1500;
 
-        $this->load->library('upload', $config);
-
-        if (!$this->upload->do_upload('book_cover')) {
-            $error = array('error' => $this->upload->display_errors());
-
-            $this->load->view('admin/tambah_buku', $error);
-        } else {
-            $data = array('image_metadata' => $this->upload->data());
-
-            $this->load->view('admin/tambah_buku', $data);
-        }
+        $this->check_session();
 
         // $book_cover =  $this->_uploadFile();
         // $book_name =  $this->input->post('book_name');
@@ -192,29 +180,7 @@ class Admin extends CI_Controller
         // die();
     }
 
-    private function _uploadFile()
-    {
-        $config['upload_path'] = './assets/img/book_cover/';
-        $config['allowed_types'] = 'gif|jpg|png';
-        $config['max_size'] = 2000;
-        $config['max_width'] = 1500;
-        $config['max_height'] = 1500;
 
-        $this->load->library('upload', $config);
-
-        if (!$this->upload->do_upload('book_cover')) {
-            $err = $this->upload->display_errors();
-
-            $flahdata = $this->alert_dismiss('danger', $err);
-
-            $this->session->set_flashdata('message', $flahdata);
-            $this->load->view('admin/tambah_buku');
-        } else {
-            $file_name = $this->upload->data();
-
-            return $file_name;
-        }
-    }
 
     public function logout()
     {

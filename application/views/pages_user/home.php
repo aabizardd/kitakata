@@ -19,17 +19,15 @@ function rupiah($angka)
                 <div class="col-lg-9 offset-lg-3 col-md-8 mb-sm--30">
                     <div class="slider-wrapper owl-carousel right-side-dot" id="homepage-slider">
                         <div class="single-slider content-v-center"
-                            style="background-image: url(assets/img/slider/home1-slider1.jpg);">
+                            style="background-image: url(assets/img/slider/home1-slider1.jpg);background-size: contain">
 
                         </div>
-                        <div class="single-slider" style="
-                      background-image: url(assets/img/slider/home1-slider2.jpg);
-                    ">
+                        <div class=" single-slider content-v-center"
+                            style="background-image: url(assets/img/slider/home1-slider2.jpg);background-size: contain;">
 
                         </div>
-                        <div class="single-slider content-v-center" style="
-                      background-image: url(assets/img/slider/home1-slider2.jpg);
-                    ">
+                        <div class="single-slider content-v-center"
+                            style="background-image: url(assets/img/slider/home1-slider2.jpg);background-size: contain;">
 
                         </div>
                     </div>

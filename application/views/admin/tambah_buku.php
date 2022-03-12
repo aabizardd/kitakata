@@ -14,7 +14,8 @@
 
             <div class="page-heading">
                 <h3>Tambah Buku
-                    <button style="float: right;" class="btn btn-info"><i class="fas fa-save"></i> Simpan Data
+                    <button style="float: right;" class="btn btn-info" type="submit"><i class="fas fa-save"></i> Simpan
+                        Data
                         Buku</button>
                 </h3>
 
@@ -40,7 +41,7 @@
                                 <div class="form-group">
 
                                     <label for="helperText">Cover Buku</label>
-                                    <input type="file" class="image-preview-filepond" name="book_cover" />
+                                    <input type="file" class="image-preview-filepond" />
 
                                 </div>
 

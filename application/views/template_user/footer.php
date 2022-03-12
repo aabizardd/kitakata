@@ -2,135 +2,251 @@
     <div class="footer-top">
         <div class="container">
             <div class="row pt--40 pb--40">
-                <div class="col-md-4 mb-sm--30">
+                <div class="col-md-6 mb-sm--30" style="vertical-align: text-top;">
                     <div class="method-box">
-                        <div class="method-box__icon">
-                            <a href="https://wa.me/6281210700524/" target="_blank"><i class="fa fa-phone"></i></a>
-                        </div>
+
+                        Metode Pembayaran
+
+
+                        <?php $payments = $this->db->get('t_payments')->result() ?>
+
+
                         <div class="method-box__content">
-                            <h4>+62 812-1070-0524</h4>
-                            <p>Transaksi Melalui Whatsapp!</p>
+                            <div class="row">
+                                <?php foreach ($payments as $payment) : ?>
+                                <div class="col-2">
+                                    <img src="<?= base_url('assets/img/payments/' . $payment->payment_img) ?>" alt=""
+                                        width="250">
+                                </div>
+
+
+                                <?php endforeach ?>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-sm--30">
+
+                <div class="col-md-6 mb-sm--30">
                     <div class="method-box">
-                        <div class="method-box__icon">
-                            <a href=""><i class="fa fa-envelope-o"></i></a>
-                        </div>
+
+
+                        Metode Pengiriman
+
+
+
+
+                        <?php $deliveries = $this->db->get('t_deliveries')->result() ?>
+
+
                         <div class="method-box__content">
-                            <h4>Support@roadthemes.com</h4>
-                            <p>Orders Support!</p>
+                            <div class="row">
+                                <?php foreach ($deliveries as $delivery) : ?>
+                                <div class="col-2">
+                                    <img src="<?= base_url('assets/img/delivery/' . $delivery->delivery_img) ?>" alt=""
+                                        width="250">
+                                </div>
+
+
+                                <?php endforeach ?>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="method-box">
-                        <div class="method-box__icon">
-                            <a href=""><i class="fa fa-clock-o"></i></a>
-                        </div>
-                        <div class="method-box__content">
-                            <h4>Mon - Fri / 8:00 - 18:00</h4>
-                            <p>Working Days/Hours!</p>
-                        </div>
-                    </div>
-                </div>
+
             </div>
+
             <div class="row">
                 <div class="col-12">
                     <hr class="line" />
                 </div>
             </div>
             <div class="row pt--40 pb--40">
-                <div class="col-lg-8 mb-md--30">
+
+                <div class="col-lg-10 mb-md--30">
                     <div class="row">
                         <div class="col-md-4 mb-sm--30">
                             <div class="footer-widget">
-                                <h3 class="widget-title">Contact US</h3>
-                                <ul class="widget-menu">
-                                    <li><a href="#">Brands</a></li>
-                                    <li><a href="#">Gift Vouchers</a></li>
-                                    <li><a href="#">Affiliates</a></li>
-                                    <li><a href="wishlist.html">Wishlist</a></li>
-                                    <li><a href="my-account.html">Order History</a></li>
-                                    <li><a href="my-account.html">Track Your Order</a></li>
-                                </ul>
+                                <h3 class="widget-title">Kontak Kami</h3>
+
+
+
+
+                                <div class="method-box mt-5">
+                                    <div class="method-box__icon">
+                                        <a href="https://wa.me/6281210700524/" target="_blank"><i
+                                                class="fa fa-phone"></i></a>
+                                    </div>
+                                    <div class="method-box__content">
+                                        <h4>Telp/Whatsapp</h4>
+                                        <p>081210700524</p>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="method-box mt-5">
+                                    <div class="method-box__icon">
+                                        <a href=""><i class="fa fa-envelope-o"></i></a>
+                                    </div>
+                                    <div class="method-box__content">
+                                        <h4>Email</h4>
+                                        <p>kitakatastore22@gmail.com</p>
+                                    </div>
+                                </div>
+
+                                <div class="method-box mt-5">
+                                    <div class="method-box__icon">
+                                        <a href=""><i class="fa fa-home"></i></a>
+                                    </div>
+                                    <div class="method-box__content">
+                                        <h4>Alamat Kami</h4>
+                                        <p style="text-align: justify;">Perum Gemilang Property Citayam 1 Blok H-20
+                                            Susukan, Bojong Gede, Bogor, Jawa Barat 16920
+                                        </p>
+                                    </div>
+                                </div>
+
+
+
+
+
                             </div>
                         </div>
+
                         <div class="col-md-4 mb-sm--30">
                             <div class="footer-widget">
-                                <h3 class="widget-title">CUSTOMER SERVICE</h3>
+                                <h3 class="widget-title">KitaKataStore</h3>
                                 <ul class="widget-menu">
-                                    <li><a href="contact.html">Contact</a></li>
-                                    <li><a href="#">Returns</a></li>
-                                    <li><a href="my-account.html">Order History</a></li>
-                                    <li><a href="#">Site Map</a></li>
-                                    <li><a href="my-account.html">My Account</a></li>
-                                    <li><a href="#">Unsubscribe Notification</a></li>
+                                    <li><a href="contact.html">Tentang KitaKataStore</a></li>
+                                    <li><a href="#">Affiliate Program</a></li>
+                                    <li><a href="my-account.html">Terbitkan Buku Sendiri</a></li>
+                                    <li><a href="#">Jadi Reseller</a></li>
+                                    <li><a href="my-account.html">Info Karier</a></li>
+                                    <!-- <li><a href="#">Unsubscribe Notification</a></li> -->
                                 </ul>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="footer-widget">
-                                <h3 class="widget-title">INFORMATION</h3>
+                                <h3 class="widget-title">BANTUAN</h3>
                                 <ul class="widget-menu">
-                                    <li><a href="about-us.html">About Us</a></li>
+                                    <li><a href="about-us.html">Cara Belanja</a></li>
                                     <li>
-                                        <a href="my-account.html">Delivery Information</a>
+                                        <a href="my-account.html">Jasa Pengiriman </a>
                                     </li>
-                                    <li><a href="privacy.html">Privacy Policy</a></li>
+                                    <li><a href="privacy.html">Konfirmasi Pembayaran</a></li>
                                     <li>
-                                        <a href="terms-and-conditions.html">Terms & Conditions</a>
+                                        <a href="terms-and-conditions.html">Lacak Pesanan</a>
                                     </li>
-                                    <li><a href="#">Warranty</a></li>
-                                    <li><a href="faq.html">FAQ</a></li>
-                                    <li><a href="login-register.html">Login</a></li>
+                                    <li><a href="#">Syarat dan Ketentuan</a></li>
+                                    <li><a href="faq.html">Keuntungan Belanja</a></li>
+                                    <!-- <li><a href="login-register.html">Login</a></li> -->
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="footer-widget mb--40">
+
+                <div class="col-lg-2">
+                    <!-- <div class="footer-widget mb--40">
                         <h3 class="widget-title">DOWNLOAD APP</h3>
                         <div class="app-btn-group">
                             <a href="#" class="app-btn apple-btn">App store</a>
                             <a href="#" class="app-btn gplay-btn">Play store</a>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="footer-widget social-widget">
                         <h3 class="widget-title">Follow Us</h3>
-                        <ul class="social social-2">
-                            <li class="social__item">
+
+                        <div class="row">
+
+                            <div class="col-4">
                                 <a class="social__link" href="https://facebook.com/" target="_blank" rel="noopener"
-                                    data-bs-toggle="tooltip" data-bs-placement="top" title="facebook">
+                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook">
                                     <i class="fa fa-facebook"></i>
                                 </a>
-                            </li>
-                            <li class="social__item">
-                                <a class="social__link" href="https://twitter.com/" target="_blank" rel="noopener"
-                                    data-bs-toggle="tooltip" data-bs-placement="top" title="twitter">
+
+
+                            </div>
+
+                            <div class="col-4">
+                                <a class="social__link" href="https://facebook.com/" target="_blank" rel="noopener"
+                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Instagram">
+                                    <i class="fa fa-instagram"></i>
+                                </a>
+
+
+                            </div>
+
+                            <div class="col-4">
+                                <a class="social__link" href="https://facebook.com/" target="_blank" rel="noopener"
+                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter">
                                     <i class="fa fa-twitter"></i>
                                 </a>
-                            </li>
-                            <li class="social__item">
-                                <a class="social__link" href="https://pinterest.com/" target="_blank" rel="noopener"
-                                    data-bs-toggle="tooltip" data-bs-placement="top" title="pinterest">
-                                    <i class="fa fa-pinterest"></i>
+
+
+                            </div>
+
+                            <div class="col-4 mt-3">
+                                <a class="social__link" href="https://facebook.com/" target="_blank" rel="noopener"
+                                    data-bs-toggle="tooltip" data-bs-placement="top" title="TikTok">
+                                    <img src="https://pngfolio.com/images/all_img/1631443365tiktok-icon.png" alt=""
+                                        style="width: 20px;">
                                 </a>
-                            </li>
-                            <li class="social__item">
-                                <a class="social__link" href="https://linkedin.com/" target="_blank" rel="noopener"
-                                    data-bs-toggle="tooltip" data-bs-placement="top" title="linkedin">
-                                    <i class="fa fa-linkedin"></i>
+
+
+                            </div>
+
+                            <div class="col-4 mt-3">
+                                <a class="social__link" href="https://facebook.com/" target="_blank" rel="noopener"
+                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Youtube">
+                                    <i class="fa fa-youtube"></i>
                                 </a>
-                            </li>
-                            <li class="social__item">
-                                <a class="social__link" href="https://vimeo.com/" target="_blank" rel="noopener"
-                                    data-bs-toggle="tooltip" data-bs-placement="top" title="vimeo">
-                                    <i class="fa fa-vimeo"></i>
+
+
+                            </div>
+
+                            <!-- <div class="col-4 mt-3">
+                                <a class="social__link" href="https://facebook.com/" target="_blank" rel="noopener"
+                                    data-bs-toggle="tooltip" data-bs-placement="top" title="facebook">
+                                    <i class="fa fa-shopee"></i>
                                 </a>
-                            </li>
+
+
+                            </div> -->
+
+
+
+
+                        </div>
+
+
+
+
+                        <!-- <a class="social__link" href="https://twitter.com/" target="_blank" rel="noopener"
+                            data-bs-toggle="tooltip" data-bs-placement="top" title="twitter">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+
+
+                        <a class="social__link" href="https://pinterest.com/" target="_blank" rel="noopener"
+                            data-bs-toggle="tooltip" data-bs-placement="top" title="pinterest">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+
+
+
+                        <a class="social__link" href="https://linkedin.com/" target="_blank" rel="noopener"
+                            data-bs-toggle="tooltip" data-bs-placement="top" title="linkedin">
+                            <i class="fa fa-tiktok"></i>
+                        </a>
+
+
+                        <a class="social__link" href="https://vimeo.com/" target="_blank" rel="noopener"
+                            data-bs-toggle="tooltip" data-bs-placement="top" title="vimeo">
+                            <i class="fa fa-youtube"></i>
+                        </a> -->
+
                         </ul>
                     </div>
                 </div>
@@ -150,9 +266,9 @@
             <div class="row pb--30">
                 <div class="col-12 text-center">
                     <ul class="footer-menu">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="cart.html">Shopping Cart</a></li>
-                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="<?= base_url('') ?>">Home</a></li>
+                        <li><a href="<?= base_url('cart') ?>">Keranjang</a></li>
+                        <li><a href="<?= base_url('shop') ?>">Shop</a></li>
                     </ul>
                 </div>
             </div>

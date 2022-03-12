@@ -10,21 +10,7 @@ function rupiah($angka)
 
 ?>
 
-<!-- Breadcumb area Start -->
-<div class="breadcrumb-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <ul class="breadcrumb">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="shop.html">Shop</a></li>
-                    <li class="current"><a>Cart</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Breadcumb area End -->
+
 
 <!-- Main content wrapper start -->
 

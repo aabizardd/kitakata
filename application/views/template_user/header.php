@@ -55,15 +55,7 @@
                             <nav class="main-navigation" style="float: left">
                                 <!-- Mainmenu Start -->
                                 <?php $page_active = $this->uri->segment(1) ?>
-                                <ul class="mainmenu">
-                                    <li
-                                        class="mainmenu__item <?= !$page_active || $page_active == 'home' ? 'active' : '' ?>">
-                                        <a href="<?= base_url('') ?>" class="mainmenu__link">Home</a>
-                                    </li>
-                                    <li class="mainmenu__item <?= $page_active == 'shop' ? 'active' : '' ?>">
-                                        <a href="<?= base_url('shop') ?>" class="mainmenu__link">Shop</a>
-                                    </li>
-                                </ul>
+
                                 <!-- Mainmenu End -->
                             </nav>
                         </div>
@@ -93,7 +85,7 @@
                                         </optgroup>
                                     </select>
                                 </div>
-                                <input type="text" class="search-form__input" placeholder="Enter your search..."
+                                <input type="text" class="search-form__input" placeholder="Masukan pecnarian mu..."
                                     name="book_name" />
                                 <button class="search-form__submit hover-scheme-2">
                                     <i class="fa fa-search"></i>
@@ -118,7 +110,7 @@
                             <!-- Category Nav Start -->
                             <div class="category-nav">
                                 <h2 class="category-nav__title primary-bg" id="js-cat-nav-title">
-                                    <i class="fa fa-bars"></i> <span>Categories</span>
+                                    <i class="fa fa-bars"></i> <span>Kategori</span>
                                 </h2>
 
                                 <ul class="category-nav__menu <?= $page_active != '' && $page_active != 'home'  ? 'hide-in-default' : '' ?>"
@@ -147,7 +139,7 @@
                             <div class="category-mobile-menu"></div>
                         </div>
                         <div class="col-lg-8 col-md-10">
-                            <div class="corporate corporate--1">
+                            <!-- <div class="corporate corporate--1">
                                 <div class="corporate__single">
                                     <div class="corporate__icon">
                                         <i class="fa fa-refresh"></i>
@@ -177,7 +169,7 @@
                                         <p class="corporate__text">We support online 24hrs</p>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="col-lg-1 col-md-2 align-self-start">
 
@@ -240,15 +232,15 @@
                                         </div>
                                         <div class="mini-cart__total">
                                             <h4>
-                                                <span class="mini-cart__total--title">Subtotal</span>
+                                                <span class="mini-cart__total--title">Total Harga</span>
                                                 <span
                                                     class="mini-cart__total--ammount"><?= rupiahs($total_all) ?></span>
                                             </h4>
                                         </div>
                                         <div class="mini-cart__btn">
                                             <a href="<?= base_url('cart') ?>"
-                                                class="btn btn-small btn-icon btn-style-1 color-1">View
-                                                Cart <i class="fa fa-angle-right"></i></a>
+                                                class="btn btn-small btn-icon btn-style-1 color-1">Keranjang <i
+                                                    class="fa fa-angle-right"></i></a>
                                             <a href="https://wa.me/6281210700524/?text=Hallo%20saya%20ingin%20membeli%20buku%20di%20kitakatastore.com"
                                                 target="_blank"
                                                 class="btn btn-small btn-icon btn-style-1 color-1">Checkout <i
@@ -269,27 +261,14 @@
                     <div class="row">
                         <div class="col-lg-3">
                             <!-- Sticky Logo Start -->
-                            <a class="sticky-logo" href="<?= base_url() ?>">
+                            <a class="sticky-logo mb-3" href="<?= base_url() ?>">
                                 <img src="<?= base_url('/') ?>assets/img/logo/logo-white.png" alt="logo" width="170" />
                             </a>
                             <!-- Sticky Logo End -->
                         </div>
                         <div class="col-lg-9">
                             <!-- Sticky Mainmenu Start -->
-                            <nav class="sticky-navigation">
-                                <ul class="mainmenu sticky-menu">
-                                    <li
-                                        class="mainmenu__item <?= !$page_active || $page_active == 'home' ? 'active' : '' ?>">
-                                        <a href="<?= base_url('') ?>" class="mainmenu__link">Home</a>
-                                    </li>
-                                    <li class="mainmenu__item <?= $page_active == 'shop' ? 'active' : '' ?>">
-                                        <a href="<?= base_url('shop') ?>" class="mainmenu__link">Shop</a>
-                                    </li>
-                                </ul>
-                                <div class="sticky-mobile-menu">
-                                    <span class="sticky-menu-btn"></span>
-                                </div>
-                            </nav>
+
                             <!-- Sticky Mainmenu End -->
                         </div>
                     </div>

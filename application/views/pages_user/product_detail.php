@@ -11,20 +11,6 @@ function rupiah($angka)
 ?>
 
 
-<div class="breadcrumb-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <ul class="breadcrumb">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="Blog-2.html">Detail Produk</a></li>
-
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-
 <!-- Main Content Wrapper Start -->
 <div class="main-content-wrapper">
     <div class="single-products-area section-padding section-sm-padding">
@@ -276,7 +262,7 @@ function rupiah($angka)
                 <div class="row">
                     <div class="col-12 mb--20">
                         <div class="section-title title-1">
-                            <h2>You may also like…</h2>
+                            <h2>Mungkin kamu juga suka....</h2>
                         </div>
                     </div>
                 </div>
