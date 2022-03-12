@@ -17,7 +17,7 @@ function rupiah($angka)
 <div class="main-content-wrapper">
     <div class="cart-area pt--40 pb--80 pt-sm--30 pb-sm--60">
         <div class="container">
-            <div class="cart-wrapper bg--white mb--80 mb-sm--60">
+            <div class="cart-wrapper bg--white mb--80 mb-sm--60" style="border-radius: 10px;">
                 <div class="row">
                     <div class="col-12">
                         <!-- Cart Area Start -->
@@ -106,7 +106,7 @@ function rupiah($angka)
             <div class="cart-page-total-wrapper">
                 <div class="row justify-content-end">
                     <div class="col-xl-6 col-lg-8 col-md-10">
-                        <div class="cart-page-total bg--white">
+                        <div class="cart-page-total bg--white" style="border-radius: 10px;">
 
                             <div class="cart-calculator-table table-content table-responsive">
                                 <table class="table">
