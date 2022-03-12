@@ -105,8 +105,8 @@ class Book_Model extends CI_Model
     {
         $this->db->select('*, count(a.book_category) book_count');
         $this->db->from('t_books a');
-        $this->db->join('t_categories c', 'a.book_category = c.category_id');
-        $this->db->group_by('a.book_category');
+        $this->db->join('t_categories c', 'a.book_category = c.category_id', 'RIGHT');
+        $this->db->group_by('c.category_id');
 
         $query = $this->db->get()->result();
 

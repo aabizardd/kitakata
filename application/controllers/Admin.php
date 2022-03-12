@@ -141,43 +141,199 @@ class Admin extends CI_Controller
 
         $this->check_session();
 
-        // $book_cover =  $this->_uploadFile();
-        // $book_name =  $this->input->post('book_name');
-        // $book_category =  $this->input->post('book_category');
-        // $book_discount =  $this->input->post('book_discount');
-        // $book_price =  $this->input->post('book_price');
-        // $book_stock =  $this->input->post('book_stock');
-        // $book_synopsis =  $this->input->post('book_synopsis');
-        // $book_writer =  $this->input->post('book_writer');
-        // $book_publisher =  $this->input->post('book_publisher');
-        // $book_edition =  $this->input->post('book_edition');
-        // $book_size =  $this->input->post('book_size');
-        // $book_thick =  $this->input->post('book_thick');
-        // $book_weight =  $this->input->post('book_weight');
-        // $book_isbn =  $this->input->post('book_isbn');
+        $book_cover =  $this->_uploadFile();
+        $book_name =  $this->input->post('book_name');
+        $book_category =  $this->input->post('book_category');
+        $book_discount =  $this->input->post('book_discount');
+        $book_price =  $this->input->post('book_price');
+        $book_stock =  $this->input->post('book_stock');
+        $book_synopsis =  $this->input->post('book_synopsis');
+        $book_writer =  $this->input->post('book_writer');
+        $book_publisher =  $this->input->post('book_publisher');
+        $book_edition =  $this->input->post('book_edition');
+        $book_size =  $this->input->post('book_size');
+        $book_thick =  $this->input->post('book_thick');
+        $book_weight =  $this->input->post('book_weight');
+        $book_isbn =  $this->input->post('book_isbn');
 
+        $book_price = preg_replace('/[Rp. ]/', '', $book_price);
 
-        // var_dump($book_cover);
+        // var_dump($book_synopsis);
         // die();
 
-        // $data_book_1 = [
-        //     'book_name' => $book_name,
-        //     'book_cover' => $book_cover,
-        //     'book_category' => $book_category,
-        //     'book_discount' => $book_discount,
-        //     'book_price' => $book_price,
-        //     'book_stock' => $book_stock,
-        //     'book_synopsis' => $book_synopsis,
-        // ];
+        $data_book_1 = [
+            'book_name' => $book_name,
+            'book_cover' => $book_cover,
+            'book_category' => $book_category,
+            'book_discount' => $book_discount,
+            'book_price' => $book_price,
+            'book_stock' => $book_stock,
+            'book_synopsis' => $book_synopsis,
+        ];
+
+        $this->db->insert('t_books', $data_book_1);
+
+        $insert_id = $this->db->insert_id();
+
+        $data_book_2 = [
+            'book_writer' => $book_writer,
+            'book_publisher' => $book_publisher,
+            'book_edition' => $book_edition,
+            'book_size' => $book_size,
+            'book_thick' => $book_thick,
+            'book_weight' => $book_weight,
+            'book_isbn' => $book_isbn,
+            'book_id' => $insert_id,
+        ];
+
+        $this->db->insert('t_book_detail', $data_book_2);
 
 
 
-        // $this->db->insert('t_books', $data_book_1);
+
+        $flahdata = $this->alert_dismiss('success', 'Berhasil menambahkan buku baru!');
+        $this->session->set_flashdata('message', $flahdata);
+
+
 
 
         redirect('admin/tambah_buku');
         // var_dump($book_cover);
         // die();
+    }
+
+    public function delete_book($book_id)
+    {
+
+
+        $this->db->delete('t_books', ['book_id' => $book_id]);
+
+        $flahdata = $this->alert_dismiss('success', 'Berhasil menghapus buku!');
+        $this->session->set_flashdata('message', $flahdata);
+
+        redirect('admin/book');
+    }
+
+
+    private function _uploadFile()
+    {
+
+        // var_dump($this->input->post('file_img_materi'));
+        // die();
+
+        $namaFiles = $_FILES['book_cover']['name'];
+        $ukuranFile = $_FILES['book_cover']['size'];
+        $type = $_FILES['book_cover']['type'];
+        $eror = $_FILES['book_cover']['error'];
+
+
+
+        // $nama_file = str_replace(" ", "_", $namaFiles);
+        $tmpName = $_FILES['book_cover']['tmp_name'];
+
+
+        if ($eror === 4) {
+            $flahdata = $this->alert_dismiss('danger', 'Belum memilih gambar');
+
+            $this->session->set_flashdata('message', $flahdata);
+
+            redirect('admin/tambah_buku');
+            return false;
+        }
+
+        $ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
+
+        $ekstensiGambar = explode('.', $namaFiles);
+
+
+        $ekstensiGambar = strtolower(end($ekstensiGambar));
+        if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
+            $flahdata = $this->alert_dismiss('danger', 'Yang kamu pilih bukan gambar!');
+            $this->session->set_flashdata('message', $flahdata);
+
+            redirect('admin/tambah_buku');
+            return false;
+        }
+
+        $namaFilesBaru = "book-cover";
+        $namaFilesBaru .= uniqid();
+        $namaFilesBaru .= '.';
+        $namaFilesBaru .= $ekstensiGambar;
+
+        move_uploaded_file($tmpName, 'assets/img/book_cover/' . $namaFilesBaru);
+
+        return $namaFilesBaru;
+    }
+
+    public function category()
+    {
+
+        $this->check_session();
+
+        $categories = $this->db->get('t_categories')->result();
+
+
+        $data = [
+            'title' => 'Kelola Kategori - Kata Kiri Store',
+            'categories' => $categories
+        ];
+
+        $this->load->view('templates_admin/header', $data);
+        $this->load->view('admin/kelola_kategori');
+        $this->load->view('templates_admin/footer');
+    }
+
+    public function add_category()
+    {
+
+        $category_name = $this->input->post('category_name');
+
+        $data = [
+            'category_name' => $category_name
+        ];
+
+        $this->db->insert('t_categories', $data);
+
+        $flahdata = $this->alert_dismiss('success', 'Berhasil menambahkan kategori baru!');
+        $this->session->set_flashdata('message', $flahdata);
+
+        redirect('admin/category');
+    }
+
+    public function delete_category($id)
+    {
+        $category_id = $id;
+
+        $data = [
+            'category_id' => $category_id
+        ];
+
+        $this->db->delete('t_categories', $data);
+
+        $flahdata = $this->alert_dismiss('success', 'Berhasil menghapus kategori!');
+        $this->session->set_flashdata('message', $flahdata);
+
+        redirect('admin/category');
+    }
+
+    public function edit_category()
+    {
+
+        $category_name = $this->input->post('category_name');
+        $category_id = $this->input->post('category_id');
+
+        $data = [
+            'category_name' => $category_name
+        ];
+
+
+
+        $this->db->update('t_categories', $data, ['category_id' => $category_id]);
+
+        $flahdata = $this->alert_dismiss('success', 'Berhasil mengubahP kategori!');
+        $this->session->set_flashdata('message', $flahdata);
+
+        redirect('admin/category');
     }
 
 

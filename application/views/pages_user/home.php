@@ -38,7 +38,7 @@ function rupiah($angka)
     <!-- Hero Area End -->
 
     <!-- Promo Product area Start -->
-    <div class="new-products-area section-padding section-sm-padding section-sm-padding">
+    <div class="new-products-area section-padding section-sm-padding section-sm-padding mt-5">
         <div class="container">
             <div class="row align-items-center mb--20">
                 <div class="col-xl-3 col-md-4">
@@ -50,17 +50,17 @@ function rupiah($angka)
             </div>
             <div class="row no-gutters">
                 <div class="col-12">
-                    <div class="category-porducts-wrapper bg--white">
+                    <div class="category-porducts-wrapper bg--white" style="border-radius: 10px;">
                         <div class="category-product-carousel owl-carousel js-category-product-carousel-2">
 
                             <?php foreach ($product_discount as $pd) : ?>
                             <div class="product-box product-box-hover-up hover-up-2 color-1 ml-5 mt-5">
                                 <div class="product-box__img">
                                     <img src="<?= base_url('/') ?>assets/img/book_cover/<?= $pd->book_cover ?>"
-                                        alt="product" class="primary-image" />
+                                        alt="product" class="primary-image" style="width: 250px;height: 250px;" />
 
                                     <img src="<?= base_url('/') ?>assets/img/book_cover/<?= $pd->book_cover ?>"
-                                        alt="product" class="secondary-image" />
+                                        alt="product" class="secondary-image" style="width: 250px;height: 250px;" />
 
                                     <a href="<?= base_url('detail_product/' . $pd->book_id) ?>"
                                         class="product-box__quick-view"><i class="fa fa-search"></i></a>
@@ -101,7 +101,7 @@ function rupiah($angka)
                             <?php endforeach ?>
 
                         </div>
-                        <div class="promo-box text-center">
+                        <div class="promo-box text-center" style="border-radius: 10px;">
                             <a href="#"><img src="assets/img/banner/home3-banner3.jpg" alt="promo" width="100%"
                                     height="200px" /></a>
                         </div>
@@ -118,7 +118,7 @@ function rupiah($angka)
             <div class="row">
 
                 <div class="col-md-4">
-                    <div class="promo-box">
+                    <div class="promo-box mb-sm--20" style="border-radius: 10px;">
                         <a href="#"><img src="<?= base_url('/') ?>assets/img/banner/home1-banner2-3.jpeg"
                                 alt="promo" /></a>
                     </div>
@@ -127,14 +127,14 @@ function rupiah($angka)
 
 
                 <div class="col-md-4">
-                    <div class="promo-box mb-sm--20">
+                    <div class="promo-box mb-sm--20" style="border-radius: 10px;">
                         <a href="#"><img src="<?= base_url('/') ?>assets/img/banner/home1-banner2-2.jpeg"
                                 alt="promo" /></a>
                     </div>
                 </div>
 
                 <div class="col-md-4">
-                    <div class="promo-box mb-sm--20">
+                    <div class="promo-box mb-sm--20" style="border-radius: 10px;">
                         <a href="#"><img src="<?= base_url('/') ?>assets/img/banner/home1-banner2-1.png"
                                 alt="promo" /></a>
                     </div>
@@ -168,17 +168,17 @@ function rupiah($angka)
             </div>
             <div class="row no-gutters">
                 <div class="col-12">
-                    <div class="category-porducts-wrapper bg--white">
+                    <div class="category-porducts-wrapper bg--white" style="border-radius: 10px;">
                         <div class="category-product-carousel owl-carousel js-category-product-carousel-2">
 
                             <?php foreach ($products as $pd) : ?>
                             <div class="product-box product-box-hover-up hover-up-2 color-1 ml-5 mt-5">
                                 <div class="product-box__img">
                                     <img src="<?= base_url('/') ?>assets/img/book_cover/<?= $pd->book_cover ?>"
-                                        alt="product" class="primary-image" />
+                                        alt="product" class="primary-image" style="width: 250px;height: 250px;" />
 
                                     <img src="<?= base_url('/') ?>assets/img/book_cover/<?= $pd->book_cover ?>"
-                                        alt="product" class="secondary-image" />
+                                        alt="product" class="secondary-image" style="width: 250px;height: 250px;" />
 
                                     <a href="<?= base_url('detail_product/' . $pd->book_id) ?>"
                                         class="product-box__quick-view"><i class="fa fa-search"></i></a>
@@ -235,7 +235,7 @@ function rupiah($angka)
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="promo-box">
+                    <div class="promo-box" style="border-radius: 10px;">
                         <a href="#"><img src="<?= base_url('/') ?>assets/img/banner/home1-banner3.jpeg"
                                 alt="promo" /></a>
                     </div>
@@ -258,16 +258,16 @@ function rupiah($angka)
             </div>
             <div class="row no-gutters">
                 <div class="col-12">
-                    <div class="category-porducts-wrapper bg--white">
+                    <div class="category-porducts-wrapper bg--white" style="border-radius: 10px;">
                         <div class="category-product-carousel owl-carousel js-category-product-carousel-2">
                             <?php foreach ($products as $pd) : ?>
                             <div class="product-box product-box-hover-up hover-up-2 color-1 ml-5 mt-5">
                                 <div class="product-box__img">
                                     <img src="<?= base_url('/') ?>assets/img/book_cover/<?= $pd->book_cover ?>"
-                                        alt="product" class="primary-image" />
+                                        alt="product" class="primary-image" style="width: 250px;height: 250px;" />
 
                                     <img src="<?= base_url('/') ?>assets/img/book_cover/<?= $pd->book_cover ?>"
-                                        alt="product" class="secondary-image" />
+                                        alt="product" class="secondary-image" style="width: 250px;height: 250px;" />
 
                                     <a href="<?= base_url('detail_product/' . $pd->book_id) ?>"
                                         class="product-box__quick-view"><i class="fa fa-search"></i></a>
@@ -311,7 +311,7 @@ function rupiah($angka)
 
 
                         </div>
-                        <div class="promo-box text-center">
+                        <div class="promo-box text-center" style="border-radius: 10px;">
                             <a href="#"><img src="assets/img/banner/home3-banner3.jpg" alt="promo" width="100%"
                                     height="200px" /></a>
                         </div>
@@ -324,7 +324,7 @@ function rupiah($angka)
 
     <!-- Subscribe area Start -->
     <div class="container mb-5">
-        <div class="subscription-area primary-bg">
+        <div class="subscription-area primary-bg" style="border-radius: 10px;">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-md-5 mb-sm--30">

@@ -30,6 +30,12 @@
     <!-- modernizr JS
     ============================================ -->
     <script src="<?= base_url('/') ?>assets/js/vendor/modernizr-2.8.3.min.js"></script>
+
+    <style>
+    .bg-prm {
+        background-color: #2E4C6D;
+    }
+    </style>
     <!--[if lt IE 9]>
       <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -41,7 +47,7 @@
     <div class="wrapper bg--zircon-light color-scheme-1">
         <!-- Header Area Start Here -->
         <header class="header header-1">
-            <div class="header-middle header-1--middle brand-bg d-flex align-items-center" style="height: 100px">
+            <div class="header-middle header-1--middle brand-bg d-flex align-items-center bg-prm">
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-xl-3 tex-xl-left text-center">
@@ -60,7 +66,7 @@
                             </nav>
                         </div>
 
-                        <?php $categories = $this->m_book->get_count_book_cat(); ?>
+
 
                         <div class="col-xl-4 col-lg-5">
                             <!-- Search Form Start -->
@@ -94,13 +100,7 @@
                             <!-- Search Form End -->
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-12 d-flex d-lg-none">
-                            <!-- Main Mobile Menu Start -->
-                            <div class="mobile-menu"></div>
-                            <!-- Main Mobile Menu End -->
-                        </div>
-                    </div>
+
                 </div>
             </div>
             <div class="header-bottom header-1--bottom">
@@ -139,7 +139,7 @@
                             <div class="category-mobile-menu"></div>
                         </div>
                         <div class="col-lg-8 col-md-10">
-                            <!-- <div class="corporate corporate--1">
+                            <div class="corporate corporate--1">
                                 <div class="corporate__single">
                                     <div class="corporate__icon">
                                         <i class="fa fa-refresh"></i>
@@ -169,7 +169,7 @@
                                         <p class="corporate__text">We support online 24hrs</p>
                                     </div>
                                 </div>
-                            </div> -->
+                            </div>
                         </div>
                         <div class="col-lg-1 col-md-2 align-self-start">
 
@@ -178,7 +178,7 @@
                             <!-- Header Cart Start -->
                             <div class="mini-cart mini-cart--1">
                                 <a class="mini-cart__dropdown-toggle" id="cartDropdown">
-                                    <i class="fa fa-shopping-bag mini-cart__icon"></i>
+                                    <i class="fa fa-shopping-bag mini-cart__icon" style="color:#2E4C6D"></i>
                                     <sub class="mini-cart__count"><?= count($this->cart->contents()) ?></sub>
                                 </a>
                                 <div class="mini-cart__dropdown-menu">
@@ -256,7 +256,7 @@
             </div>
 
             <!-- Sticky Header Start -->
-            <div class="fixed-header">
+            <div class="fixed-header" style="background-color: #2E4C6D;">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-3">

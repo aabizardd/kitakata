@@ -19,7 +19,7 @@ function rupiah($angka)
             <div class="row">
                 <div class="col-lg-9 order-lg-2 mb-md--40">
                     <!-- Shop Toolbar Start -->
-                    <div class="shop-toolbar">
+                    <div class="shop-toolbar" style="border-radius: 10px;">
                         <div class="shop-toolbar__grid-list">
                             <ul class="nav">
                                 <li>
@@ -56,10 +56,12 @@ function rupiah($angka)
                                             <div class="product-box product-box-hover-down bg--white color-1">
                                                 <div class="product-box__img">
                                                     <img src="<?= base_url('/') ?>assets/img/book_cover/<?= $pd->book_cover ?>"
-                                                        alt="product" class="primary-image" />
+                                                        alt="product" class="primary-image"
+                                                        style="width: 250px;height: 250px;" />
 
                                                     <img src="<?= base_url('/') ?>assets/img/book_cover/<?= $pd->book_cover ?>"
-                                                        alt="product" class="secondary-image" />
+                                                        alt="product" class="secondary-image"
+                                                        style="width: 250px;height: 250px;" />
 
                                                     <a href="<?= base_url('detail_product/' . $pd->book_id) ?>"
                                                         class="product-box__quick-view"><i class="fa fa-search"></i></a>
@@ -217,7 +219,7 @@ function rupiah($angka)
                         <!-- Product Categories Widget Start -->
                         <div class="sidebar-widget product-widget product-cat-widget">
                             <h3 class="widget-title">Kategori Buku</h3>
-                            <div class="widget_conent">
+                            <div class="widget_conent" style="border-radius: 10px;">
                                 <ul class="product-categories">
 
                                     <?php foreach ($categories as $c) : ?>
@@ -237,7 +239,7 @@ function rupiah($angka)
 
                         <!-- Product Banner Widget Start -->
                         <div class="sidebar-widget banner-widget">
-                            <div class="promo-box full-width bg--white">
+                            <div class="promo-box full-width bg--white" style="border-radius: 10px;">
                                 <a href="#">
                                     <img src="<?= base_url('/') ?>assets/img/banner/home1-product-banner-1.jpg"
                                         alt="promo" />

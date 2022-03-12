@@ -29,6 +29,13 @@
                     </a>
                 </li>
 
+                <li class="sidebar-item <?= $this->uri->segment(2) == "category" ? 'active' : ''  ?>">
+                    <a href="<?= base_url('admin/category') ?>" class="sidebar-link">
+                        <i class="fas fa-font"></i>
+                        <span>Kelola Buku</span>
+                    </a>
+                </li>
+
 
             </ul>
         </div>

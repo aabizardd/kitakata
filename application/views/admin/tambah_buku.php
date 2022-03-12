@@ -37,11 +37,15 @@
 
                             <div class="card-body">
 
+                                <!-- <div>
+                                    <img src="<?= base_url('assets/img/book_cover/default.png') ?>" alt="">
+                                </div> -->
+
 
                                 <div class="form-group">
 
                                     <label for="helperText">Cover Buku</label>
-                                    <input type="file" class="image-preview-filepond" />
+                                    <input type="file" class="form-control" name="book_cover" />
 
                                 </div>
 
@@ -120,7 +124,7 @@
                                 <div class="form-group">
                                     <label for="helperText">Penerbit Buku</label>
                                     <input type="text" class="form-control" placeholder="Penerbit Buku"
-                                        name="book_publsiher" />
+                                        name="book_publisher" />
 
                                 </div>
 
@@ -149,7 +153,7 @@
                                 <div class="form-group">
                                     <label for="helperText">Tebal Buku</label>
                                     <input type="text" class="form-control" placeholder="Tebal Buku"
-                                        name="book_thcik" />
+                                        name="book_thick" />
 
                                     <p>
                                         <small class="text-muted">Contoh: 240 Halaman (1,3 cm)</small>

@@ -10,7 +10,7 @@
         </header>
 
         <div class="page-heading">
-            <h3>Kelola Buku</h3>
+            <h3>Kelola Kategori</h3>
 
         </div>
 
@@ -26,7 +26,7 @@
 
                                 <div class="card-body">
 
-                                    <?php $this->load->view('admin/tb_books') ?>
+                                    <?php $this->load->view('admin/tb_kategori') ?>
 
                                 </div>
                             </div>

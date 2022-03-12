@@ -5,7 +5,7 @@
                 <div class="col-md-6 mb-sm--30" style="vertical-align: text-top;">
                     <div class="method-box">
 
-                        Metode Pembayaran
+                        <span style="color:#5d5d5d;font-weight: bold;">Metode Pembayaran</span>
 
 
                         <?php $payments = $this->db->get('t_payments')->result() ?>
@@ -100,7 +100,7 @@
                                     </div>
                                     <div class="method-box__content">
                                         <h4>Alamat Kami</h4>
-                                        <p style="text-align: justify;">Perum Gemilang Property Citayam 1 Blok H-20
+                                        <p style="text-align: left;">Perum Gemilang Property Citayam 1 Blok H-20
                                             Susukan, Bojong Gede, Bogor, Jawa Barat 16920
                                         </p>
                                     </div>

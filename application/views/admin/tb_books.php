@@ -39,7 +39,7 @@ function rupiah($angka)
             <tr>
                 <td><?= ++$no ?></td>
                 <td width="20"><img src="<?= base_url('assets/img/book_cover/' . $book->book_cover)  ?>" alt=""
-                        srcset="" width="250"></td>
+                        srcset="" style="height: 250px;width: 250px;"></td>
                 <td><?= $book->book_name ?></td>
                 <td width="150"><?= rupiah($book->book_price) ?></td>
                 <td width="150"><?= $book->category_name ?></td>
