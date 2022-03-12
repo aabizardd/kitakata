@@ -37,7 +37,7 @@ function rupiah($angka)
                 <td><?= ++$no ?></td>
                 <td><?= $key->category_name ?></td>
                 <td width="300">
-                    <button class="btn btn-warning add-category" data-bs-toggle="modal"
+                    <button class="btn btn-success add-category" data-bs-toggle="modal"
                         data-bs-target="#modal-edit-category" data-id="<?= $key->category_id ?>"
                         data-name="<?= $key->category_name ?>"><i class="fas fa-edit"></i> Edit</button>
                     <a href="<?= base_url('admin/delete_category/' . $key->category_id) ?>" class="btn btn-danger"><i

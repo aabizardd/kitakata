@@ -122,6 +122,25 @@ class Admin extends CI_Controller
         $this->load->view('templates_admin/footer');
     }
 
+    public function edit_buku($book_id)
+    {
+        $this->check_session();
+
+        $detail_book = $this->m_book->get_book_detail($book_id);
+
+        $data = [
+            'title' => 'Tambah Buku - Kata Kiri Store',
+            'categories' => $this->m_book->get('t_categories'),
+            'book_detail' => $detail_book
+        ];
+
+        $this->load->view('templates_admin/header', $data);
+        $this->load->view('admin/edit_buku');
+        $this->load->view('templates_admin/footer');
+    }
+
+
+
     public function tambah_buku()
     {
         $this->check_session();
@@ -202,6 +221,89 @@ class Admin extends CI_Controller
         // die();
     }
 
+    public function update_book()
+    {
+
+        $this->check_session();
+
+        $book_cover_old =  $this->input->post('book_cover_old');
+
+
+        $book_cover = "";
+        if ($_FILES['book_cover']['name'] == "") {
+
+            $book_cover = $book_cover_old;
+        } else {
+
+            $book_cover =  $this->_uploadFile();
+        }
+
+        // var_dump($_FILES['book_cover']['name']);
+        // die();
+
+        $book_id =  $this->input->post('book_id');
+
+
+        $book_name =  $this->input->post('book_name');
+        $book_category =  $this->input->post('book_category');
+        $book_discount =  $this->input->post('book_discount');
+        $book_price =  $this->input->post('book_price');
+        $book_stock =  $this->input->post('book_stock');
+        $book_synopsis =  $this->input->post('book_synopsis');
+        $book_writer =  $this->input->post('book_writer');
+        $book_publisher =  $this->input->post('book_publisher');
+        $book_edition =  $this->input->post('book_edition');
+        $book_size =  $this->input->post('book_size');
+        $book_thick =  $this->input->post('book_thick');
+        $book_weight =  $this->input->post('book_weight');
+        $book_isbn =  $this->input->post('book_isbn');
+
+        $book_price = preg_replace('/[Rp. ]/', '', $book_price);
+
+        // var_dump($book_synopsis);
+        // die();
+
+        $where = [
+            'book_id' => $book_id
+        ];
+
+        $data_book_1 = [
+            'book_name' => $book_name,
+            'book_cover' => $book_cover,
+            'book_category' => $book_category,
+            'book_discount' => $book_discount,
+            'book_price' => $book_price,
+            'book_stock' => $book_stock,
+            'book_synopsis' => $book_synopsis,
+        ];
+
+        $this->db->update('t_books', $data_book_1, $where);
+
+        // $insert_id = $this->db->insert_id();
+
+        $data_book_2 = [
+            'book_writer' => $book_writer,
+            'book_publisher' => $book_publisher,
+            'book_edition' => $book_edition,
+            'book_size' => $book_size,
+            'book_thick' => $book_thick,
+            'book_weight' => $book_weight,
+            'book_isbn' => $book_isbn,
+        ];
+
+        $this->db->insert('t_book_detail', $data_book_2, $where);
+
+
+
+
+        $flahdata = $this->alert_dismiss('success', 'Berhasil update buku!');
+        $this->session->set_flashdata('message', $flahdata);
+
+
+
+        redirect('admin/book');
+    }
+
     public function delete_book($book_id)
     {
 
@@ -253,6 +355,16 @@ class Admin extends CI_Controller
 
             redirect('admin/tambah_buku');
             return false;
+        }
+
+        $gambar_lama = $this->input->post('book_cover_old');
+
+        if ($gambar_lama) {
+
+            $file = 'assets/img/book_cover/' . $gambar_lama;
+
+            is_readable($file);
+            unlink($file);
         }
 
         $namaFilesBaru = "book-cover";

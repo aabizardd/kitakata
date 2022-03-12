@@ -45,10 +45,10 @@ function rupiah($angka)
                 <td width="150"><?= $book->category_name ?></td>
                 <td width="250">
 
-                    <button class="btn btn-success mt-2 edit-data">
+                    <a href="<?= base_url('admin/edit_buku/' . $book->book_id) ?>" class="btn btn-success mt-2">
 
                         <i class="fas fa-edit"></i> Edit
-                    </button>
+                    </a>
 
                     <a class="btn btn-danger mt-2" href="<?= base_url('admin/delete_book/' . $book->book_id) ?>"><i
                             class="fas fa-trash"></i> Delete</a>
