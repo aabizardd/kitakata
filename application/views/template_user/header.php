@@ -171,16 +171,52 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="col-lg-1 col-md-2 align-self-start">
 
 
 
                             <!-- Header Cart Start -->
-                            <div class="mini-cart mini-cart--1">
-                                <a class="mini-cart__dropdown-toggle" id="cartDropdown">
-                                    <i class="fa fa-shopping-bag mini-cart__icon" style="color:#2E4C6D"></i>
-                                    <sub class="mini-cart__count"><?= count($this->cart->contents()) ?></sub>
-                                </a>
+                            <div class="mini-cart mini-cart--1 row mt-3">
+
+
+
+
+
+                                <div class="col-6" id="cartDropdown">
+                                    <a class="mini-cart__dropdown-toggle" style="margin-left: -40px;">
+                                        <i class="fa fa-shopping-bag mini-cart__icon" style="color:#2E4C6D;"></i>
+                                        <sub class="mini-cart__count"><?= count($this->cart->contents()) ?></sub>
+                                    </a>
+                                </div>
+
+                                <div class="col-6" id="cartDropdown">
+                                    <a class="mini-cart__dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                        data-bs-toggle="dropdown" aria-expanded="false" style="margin-left: 10px;">
+                                        <i class="fa fa-user mini-cart__icon" style="color:#2E4C6D"></i>
+
+                                    </a>
+
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <?php if (!$this->session->userdata('user_id')) : ?>
+                                        <li><a class="dropdown-item" href="<?= base_url('auth') ?>">Login</a></li>
+                                        <?php else : ?>
+                                        <li><a class="dropdown-item" href="#">Cek Pesanan</a></li>
+                                        <li><a class="dropdown-item" href="<?= base_url('home/logout') ?>">Logout</a>
+                                        </li>
+                                        <?php endif ?>
+                                    </ul>
+                                </div>
+
+
+
+
+
+
+
+
+
+
                                 <div class="mini-cart__dropdown-menu">
                                     <div class="mini-cart__content">
                                         <div class="mini-cart__item">
@@ -230,6 +266,7 @@
 
 
                                         </div>
+
                                         <div class="mini-cart__total">
                                             <h4>
                                                 <span class="mini-cart__total--title">Total Harga</span>
@@ -241,8 +278,7 @@
                                             <a href="<?= base_url('cart') ?>"
                                                 class="btn btn-small btn-icon btn-style-1 color-1">Keranjang <i
                                                     class="fa fa-angle-right"></i></a>
-                                            <a href="https://wa.me/6281210700524/?text=Hallo%20saya%20ingin%20membeli%20buku%20di%20kitakatastore.com"
-                                                target="_blank"
+                                            <a href="<?= base_url('checkout') ?>"
                                                 class="btn btn-small btn-icon btn-style-1 color-1">Checkout <i
                                                     class="fa fa-angle-right"></i></a>
                                         </div>

@@ -83,7 +83,7 @@ function rupiah($angka)
 
                     <button class="btn btn-primary ml-1" type="submit">
 
-                        <span class="d-none d-sm-block">Submit</span>
+                        Submit
                     </button>
 
                 </form>
@@ -120,8 +120,7 @@ function rupiah($angka)
                     </div>
 
                     <button class="btn btn-primary ml-1" type="submit">
-
-                        <span class="d-none d-sm-block">Submit</span>
+                        Submit
                     </button>
 
                 </form>

@@ -3,12 +3,7 @@
     <?php $this->load->view('admin/sidebar') ?>
 
     <div id="main">
-        <header class="mb-3">
-            <a href="#" class="burger-btn d-block d-xl-none">
-                <i class="bi bi-justify fs-3"></i>
 
-            </a>
-        </header>
 
         <form action="<?= base_url('admin/add_book') ?>" method="POST" enctype="multipart/form-data">
 
@@ -29,7 +24,7 @@
 
 
                 <section class="row">
-                    <div class="col-12 col-lg-6">
+                    <div class="col-lg-6 col-sm-12">
 
 
 
@@ -106,7 +101,7 @@
 
                     </div>
 
-                    <div class="col-12 col-lg-6">
+                    <div class="col-lg-6 col-sm-12">
 
 
 
@@ -187,7 +182,7 @@
 
                     </div>
 
-                    <div class="col-12 col-lg-12">
+                    <div class="col-lg-12 col-sm-12">
 
 
 

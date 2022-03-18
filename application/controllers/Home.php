@@ -29,4 +29,11 @@ class Home extends CI_Controller
 		$this->load->view('pages_user/home');
 		$this->load->view('template_user/footer');
 	}
+
+	public function logout()
+	{
+
+		$this->session->sess_destroy();
+		redirect('home');
+	}
 }

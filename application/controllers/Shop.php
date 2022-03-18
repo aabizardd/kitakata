@@ -51,7 +51,8 @@ class Shop extends CI_Controller
 	{
 
 		$data = [
-			'title' => 'Cart Kita Kata'
+			'title' => 'Cart Kita Kata',
+			'categories' => $this->m_book->get_count_book_cat(),
 		];
 
 		// $this->cart->destroy();

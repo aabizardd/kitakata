@@ -129,7 +129,7 @@ class Admin extends CI_Controller
         $detail_book = $this->m_book->get_book_detail($book_id);
 
         $data = [
-            'title' => 'Tambah Buku - Kata Kiri Store',
+            'title' => 'Edit Buku - Kata Kiri Store',
             'categories' => $this->m_book->get('t_categories'),
             'book_detail' => $detail_book
         ];

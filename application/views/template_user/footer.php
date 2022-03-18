@@ -2,10 +2,10 @@
     <div class="footer-top">
         <div class="container">
             <div class="row pt--40 pb--40">
-                <div class="col-md-6 mb-sm--30" style="vertical-align: text-top;">
-                    <div class="method-box">
+                <div class="col-md-6 mb-sm--30 col-sm-12">
+                    <div class="">
 
-                        <span style="color:#5d5d5d;font-weight: bold;">Metode Pembayaran</span>
+                        <h4 class="mb-3" style="color:#c4c4c4;">Metode Pembayaran</h4>
 
 
                         <?php $payments = $this->db->get('t_payments')->result() ?>
@@ -16,7 +16,7 @@
                                 <?php foreach ($payments as $payment) : ?>
                                 <div class="col-2">
                                     <img src="<?= base_url('assets/img/payments/' . $payment->payment_img) ?>" alt=""
-                                        width="250">
+                                        width="300">
                                 </div>
 
 
@@ -26,14 +26,11 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 mb-sm--30">
-                    <div class="method-box">
+                <div class="col-md-6 mb-sm--30 col-sm-12">
+                    <div class="">
 
 
-                        Metode Pengiriman
-
-
-
+                        <h4 class="mb-3" style="color:#c4c4c4;">Metode Pengiriman</h4>
 
                         <?php $deliveries = $this->db->get('t_deliveries')->result() ?>
 
@@ -43,7 +40,7 @@
                                 <?php foreach ($deliveries as $delivery) : ?>
                                 <div class="col-2">
                                     <img src="<?= base_url('assets/img/delivery/' . $delivery->delivery_img) ?>" alt=""
-                                        width="250">
+                                        width="300">
                                 </div>
 
 
