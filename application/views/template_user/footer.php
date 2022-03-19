@@ -256,7 +256,7 @@
             <div class="row pt--40 pb--40">
                 <div class="col-12 text-center">
                     <a href="index.html" class="footer-logo">
-                        <img src="<?= base_url('/') ?>assets/img/logo/logo-blue.png" alt="logo" />
+                        <img src="<?= base_url('/') ?>assets/img/logo/logo_kitakata_blue.png" alt="logo" width="180" />
                     </a>
                 </div>
             </div>
@@ -275,17 +275,14 @@
                 </div>
             </div>
             <div class="row pt--40 pb--40">
-                <div class="col-md-6 text-md-left text-center mb-sm--30">
+                <div class="col-md-12 text-md-left text-center mb-sm--30">
                     <!-- Copyright Text Start -->
-                    <p class="copyright-text">
-                        &copy; Lazio 2021 Made With <i class="fa fa-heart"></i> BY
-                        <a href="https://hasthemes.com/">Abizard</a>
+                    <p class="copyright-text text-center">
+                        &copy; PT KitaKata Media Utama, 2022
                     </p>
                     <!-- Copyright Text End -->
                 </div>
-                <div class="col-md-6 text-md-right text-center">
-                    <img src="<?= base_url('/') ?>assets/img/icons/payment-icon.png" alt="payment" />
-                </div>
+
             </div>
         </div>
     </div>

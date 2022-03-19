@@ -58,6 +58,10 @@ $route['forgot_password'] = 'auth/forgot_password';
 // route user
 $route['home'] = 'home';
 $route['shop'] = 'shop';
+$route['checkout'] = 'transaction/checkout';
+$route['pesanan'] = 'transaction/cek_pesanan';
+$route['detail_pesanan/(:num)'] = 'transaction/detail_pesanan/$1';
+
 $route['detail_product/(:num)'] = 'product/index/$1';
 $route['cart'] = 'shop/cart';
 $route['tambah_keranjang/(:num)'] = 'shop/tambah_keranjang/$1';

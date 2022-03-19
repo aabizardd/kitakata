@@ -120,8 +120,8 @@ function rupiah($angka)
                                     </tbody>
                                 </table>
                             </div>
-                            <a href="https://wa.me/6281210700524/?text=Hallo%20saya%20ingin%20membeli%20buku%20di%20kitakatastore.com"
-                                target="_blank" class="btn btn-6 btn-style-2">Proceed to Checkout</a>
+                            <a href="<?= base_url('checkout') ?>" target="_blank" class="btn btn-6 btn-style-2">Proceed
+                                to Checkout</a>
                         </div>
                     </div>
                 </div>

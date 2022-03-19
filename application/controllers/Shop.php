@@ -160,4 +160,36 @@ class Shop extends CI_Controller
 
 		redirect('cart');
 	}
+
+	// public function checkout()
+	// {
+
+	// 	if (!$this->session->userdata('user_id')) {
+
+	// 		$this->session->set_flashdata('message', $this->alert_dismiss('danger', 'Login terlebih dahulu untuk melanjutkan pesanan!'));
+
+	// 		redirect('auth');
+	// 	} else {
+	// 		redirect('home');
+	// 	}
+	// }
+
+
+
+
+
+
+
+	public function alert_dismiss($type, $text)
+	{
+
+		$alert = '<div class="alert alert-' . $type . ' alert-dismissible fade show" role="alert">
+		' . $text . '
+		<button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+		</div>';
+
+		return $alert;
+	}
 }

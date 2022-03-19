@@ -98,6 +98,8 @@ img {
             <div class="row custom-row">
                 <div class="col-lg-9 offset-lg-3 col-md-8 mb-sm--30">
 
+                    <?= $this->session->flashdata('message') ?>
+
                     <!-- <div class="slider-wrapper owl-carousel right-side-dot" id="homepage-slider">
                         <div class="single-slider content-v-center"
                             style="background-image: url(assets/img/slider/home1-slider1.jpg);background-size: contain">
@@ -150,6 +152,8 @@ img {
         </div>
     </div>
     <!-- Hero Area End -->
+
+
 
     <!-- Promo Product area Start -->
     <div class="new-products-area section-padding section-sm-padding section-sm-padding">

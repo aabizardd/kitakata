@@ -189,6 +189,70 @@ class Auth extends CI_Controller
         }
     }
 
+    public function resetpassword()
+    {
+
+        $email = $this->input->get('email');
+        $token = $this->input->get('token');
+
+        $user = $this->db->get_where('t_users', ['email' => $email])->row_array();
+
+        if ($user) {
+
+            $user_token = $this->db->get_where('t_token', ['token' => $token])->row_array();
+
+            if ($user_token) {
+
+                $this->session->set_userdata('reset_email', $email);
+                $this->changePassword();
+            } else {
+                $this->session->set_flashdata('message', $this->alert_dismiss('danger', 'Reset password failed, wrong token!'));
+                redirect('auth');
+            }
+        } else {
+            $this->session->set_flashdata('message', $this->alert_dismiss('success', 'Reset password failed, wrong email!'));
+            redirect('auth');
+        }
+    }
+
+    public function changePassword()
+    {
+
+        if (!$this->session->userdata('reset_email')) {
+            redirect('auth');
+        }
+
+        $this->form_validation->set_rules('password', 'Paassword', 'trim|required|min_length[5]');
+        $this->form_validation->set_rules('confirm_password', 'Repeat Paassword', 'trim|required|min_length[5]|matches[password]');
+
+        if ($this->form_validation->run() == false) {
+            $data = [
+                'title' => 'Change Password - Kita Kata Store',
+                'categories' => $this->m_book->get('t_categories'),
+            ];
+
+            $this->load->view('template_user/header', $data);
+            $this->load->view('pages_auth/change_pw');
+            $this->load->view('template_user/footer');
+        } else {
+
+            $password = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
+            $email = $this->session->userdata('reset_email');
+
+            $this->db->set('password', $password);
+            $this->db->where('email', $email);
+            $this->db->update('t_users');
+
+            $this->db->delete('t_token', ['email' => $email]);
+
+            $this->session->unset_userdata('reset_email');
+
+            $this->session->set_flashdata('message', $this->alert_dismiss('success', 'Password Berhasil diperbarui, Silahkan Login!'));
+
+            redirect('auth');
+        }
+    }
+
 
 
 

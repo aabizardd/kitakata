@@ -47,13 +47,15 @@
     <div class="wrapper bg--zircon-light color-scheme-1">
         <!-- Header Area Start Here -->
         <header class="header header-1">
-            <div class="header-middle header-1--middle brand-bg d-flex align-items-center bg-prm">
+            <div class="header-middle header-1--middle brand-bg d-flex align-items-center bg-prm"
+                style="padding-top: 20px;padding-bottom: 20px;">
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-xl-3 tex-xl-left text-center">
                             <!-- Logo Start -->
                             <a href="<?= base_url() ?>" class="logo-box">
-                                <img src="<?= base_url('/') ?>assets/img/logo/logo-white.png" alt="logo" width="180" />
+                                <img src="<?= base_url('/') ?>assets/img/logo/logo_kitakata.png" alt="logo"
+                                    width="150" />
                             </a>
                             <!-- Logo End -->
                         </div>
@@ -91,7 +93,7 @@
                                         </optgroup>
                                     </select>
                                 </div>
-                                <input type="text" class="search-form__input" placeholder="Masukan pecnarian mu..."
+                                <input type="text" class="search-form__input" placeholder="Masukkan pencarian mu..."
                                     name="book_name" />
                                 <button class="search-form__submit hover-scheme-2">
                                     <i class="fa fa-search"></i>
@@ -142,13 +144,23 @@
                             <div class="corporate corporate--1">
                                 <div class="corporate__single">
                                     <div class="corporate__icon">
-                                        <i class="fa fa-refresh"></i>
+                                        <i class="fa fa-thumbs-o-up"></i>
                                     </div>
                                     <div class="corporate__content">
-                                        <h3 class="corporate__title">Free Return</h3>
+                                        <h3 class="corporate__title">TRANSAKSI MUDAH</h3>
                                         <p class="corporate__text">
-                                            30 days money back guarantee!
+                                            Transaksi mudah dilakukan di dalam aplikasi
                                         </p>
+                                    </div>
+                                </div>
+
+                                <div class="corporate__single">
+                                    <div class="corporate__icon">
+                                        <i class="fa fa-handshake-o"></i>
+                                    </div>
+                                    <div class="corporate__content">
+                                        <h3 class="corporate__title">TRANSAKSI AMAN</h3>
+                                        <p class="corporate__text">Membeli buku di kitakatastore dijamin aman</p>
                                     </div>
                                 </div>
                                 <div class="corporate__single">
@@ -156,19 +168,11 @@
                                         <i class="fa fa-paper-plane-o"></i>
                                     </div>
                                     <div class="corporate__content">
-                                        <h3 class="corporate__title">FREE SHIPPING</h3>
-                                        <p class="corporate__text">Free shipping on all order</p>
+                                        <h3 class="corporate__title">GRATIS ONGKIR</h3>
+                                        <p class="corporate__text">Gratis ongkir ke seluruh Indoenesia</p>
                                     </div>
                                 </div>
-                                <div class="corporate__single">
-                                    <div class="corporate__icon">
-                                        <i class="fa fa-support"></i>
-                                    </div>
-                                    <div class="corporate__content">
-                                        <h3 class="corporate__title">SUPPORT 24/7</h3>
-                                        <p class="corporate__text">We support online 24hrs</p>
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
 
@@ -201,7 +205,8 @@
                                         <?php if (!$this->session->userdata('user_id')) : ?>
                                         <li><a class="dropdown-item" href="<?= base_url('auth') ?>">Login</a></li>
                                         <?php else : ?>
-                                        <li><a class="dropdown-item" href="#">Cek Pesanan</a></li>
+                                        <li><a class="dropdown-item" href="<?= base_url('pesanan') ?>">Cek Pesanan</a>
+                                        </li>
                                         <li><a class="dropdown-item" href="<?= base_url('home/logout') ?>">Logout</a>
                                         </li>
                                         <?php endif ?>
@@ -245,7 +250,7 @@
                                                 <div class="mini-cart__item--content">
                                                     <h4>
                                                         <a
-                                                            href="single-product.html"><?= substr($items['name'], 0, 30) ?>...</a>
+                                                            href="<?= base_url('detail_product/' . $items['id']) ?>"><?= substr($items['name'], 0, 30) ?>...</a>
                                                     </h4>
 
                                                     <?php
@@ -292,13 +297,14 @@
             </div>
 
             <!-- Sticky Header Start -->
-            <div class="fixed-header" style="background-color: #2E4C6D;">
+            <div class="fixed-header" style="background-color: #2E4C6D;padding-top: 0px;padding-bottom: 0px;">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-3">
                             <!-- Sticky Logo Start -->
                             <a class="sticky-logo mb-3" href="<?= base_url() ?>">
-                                <img src="<?= base_url('/') ?>assets/img/logo/logo-white.png" alt="logo" width="170" />
+                                <img src="<?= base_url('/') ?>assets/img/logo/logo_kitakata.png" alt="logo"
+                                    width="150" />
                             </a>
                             <!-- Sticky Logo End -->
                         </div>
