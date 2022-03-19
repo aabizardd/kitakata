@@ -448,6 +448,59 @@ class Admin extends CI_Controller
         redirect('admin/category');
     }
 
+    public function order()
+    {
+        $this->check_session();
+
+
+        $data = [
+            'title' => 'Kelola Kategori - Kata Kiri Store',
+            'orders' => $this->m_book->get_all_order(),
+        ];
+
+        $this->load->view('templates_admin/header', $data);
+        $this->load->view('admin/kelola_orderan');
+        $this->load->view('templates_admin/footer');
+    }
+
+    public function update_pesanan($order_id, $stat)
+    {
+
+
+        $data = [
+            'order_status' => $stat
+        ];
+
+        $where = [
+            'order_id' => $order_id
+        ];
+
+        $this->db->update('t_order', $data, $where);
+
+        redirect($_SERVER['HTTP_REFERER']);
+    }
+
+    public function kirim_pesanan()
+    {
+
+        $order_id = $this->input->post('order_id');
+        $order_delivery = $this->input->post('order_delivery');
+        $order_receipt = $this->input->post('order_receipt');
+
+        $data = [
+            'order_delivery' => $order_delivery,
+            'order_receipt' => $order_receipt,
+            'order_status' => 3,
+        ];
+
+        $where = [
+            'order_id' => $order_id
+        ];
+
+        $this->db->update('t_order', $data, $where);
+        redirect($_SERVER['HTTP_REFERER']);
+    }
+
 
 
     public function logout()

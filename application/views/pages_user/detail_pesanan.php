@@ -170,6 +170,16 @@ function rupiah($angka)
 
                                             <?= $this->session->flashdata('message') ?>
 
+                                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                                Silahkan Melakukan Pembayaran Ke:
+                                                <strong><?= strtoupper($order_detail['payment_name']) . " " . $order_detail['payment_number'] ?></strong>
+                                                <button type="button" class="close" data-bs-dismiss="alert"
+                                                    aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+
+
                                             <?php if ($order_detail['order_status'] == 1) : ?>
 
                                             <form method="POST" enctype="multipart/form-data"

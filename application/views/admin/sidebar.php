@@ -36,6 +36,13 @@
                     </a>
                 </li>
 
+                <li class="sidebar-item <?= $this->uri->segment(2) == "order" ? 'active' : ''  ?>">
+                    <a href="<?= base_url('admin/order') ?>" class="sidebar-link">
+                        <i class="fas fa-money-bill"></i>
+                        <span>Kelola Transaksi</span>
+                    </a>
+                </li>
+
 
             </ul>
         </div>

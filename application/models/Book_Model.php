@@ -155,4 +155,17 @@ class Book_Model extends CI_Model
 
         return $query;
     }
+
+    public function get_all_order()
+    {
+
+        $this->db->select('*');
+        $this->db->from('t_order a');
+        $this->db->join('t_order_status b', 'a.order_status = b.status_id');
+
+
+        $query = $this->db->get()->result();
+
+        return $query;
+    }
 }
