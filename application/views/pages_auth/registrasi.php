@@ -88,7 +88,7 @@ function rupiah($angka)
                         </form>
 
                         <!-- <p class="mt-4"><a href="">Lupa password?</a></p> -->
-                        <p class="mt-4">Sudah punya akun? <a href="<?= base_url('auth') ?>">Login disini</a></p>
+                        <p class="mt-4">Sudah punya akun? <a href="<?= base_url('auth') ?>">Login di sini</a></p>
 
 
 

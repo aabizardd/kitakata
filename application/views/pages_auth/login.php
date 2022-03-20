@@ -57,7 +57,7 @@ function rupiah($angka)
 
                         <p class="mt-4"><a href="<?= base_url('forgot_password') ?>">Lupa password?</a></p>
                         <a class="" style="color: black;">Belum punya akun? <a
-                                href="<?= base_url('registrasi') ?>">Registrasi disini</a></a>
+                                href="<?= base_url('registrasi') ?>">Registrasi di sini</a></a>
 
 
 

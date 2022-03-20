@@ -9,8 +9,8 @@
     <meta name="description" content="meta description" />
 
     <!-- Favicons -->
-    <link rel="shortcut icon" href="<?= base_url('/') ?>assets/img/favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="<?= base_url('/') ?>assets/img/icon.png" />
+    <link rel="shortcut icon" href="<?= base_url('/') ?>assets/img/logo/logo_kitakata.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="<?= base_url('/') ?>assets/img/logo/logo_kitakata.png" />
     <title><?= $title ?></title>
 
     <!-- ************************* CSS Files ************************* -->
@@ -93,7 +93,7 @@
                                         </optgroup>
                                     </select>
                                 </div>
-                                <input type="text" class="search-form__input" placeholder="Masukkan pencarian mu..."
+                                <input type="text" class="search-form__input" placeholder="Masukkan pencarianmu..."
                                     name="book_name" />
                                 <button class="search-form__submit hover-scheme-2">
                                     <i class="fa fa-search"></i>
@@ -149,8 +149,7 @@
                                     <div class="corporate__content">
                                         <h3 class="corporate__title">TRANSAKSI MUDAH</h3>
                                         <p class="corporate__text">
-                                            Transaksi mudah dilakukan di dalam aplikasi
-                                        </p>
+                                            Transaksi mudah dilakukan </p>
                                     </div>
                                 </div>
 
@@ -169,7 +168,7 @@
                                     </div>
                                     <div class="corporate__content">
                                         <h3 class="corporate__title">GRATIS ONGKIR</h3>
-                                        <p class="corporate__text">Gratis ongkir ke seluruh Indoenesia</p>
+                                        <p class="corporate__text">Gratis ongkir ke seluruh Indonesia</p>
                                     </div>
                                 </div>
 
@@ -196,8 +195,9 @@
 
                                 <div class="col-6" id="cartDropdown">
                                     <a class="mini-cart__dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                        data-bs-toggle="dropdown" aria-expanded="false" style="margin-left: 10px;">
-                                        <i class="fa fa-user mini-cart__icon" style="color:#2E4C6D"></i>
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <!-- <i class=""></i>                                         -->
+                                        <i class="fa fa-user-circle-o mini-cart__icon" style="color:#2E4C6D"></i>
 
                                     </a>
 
